@@ -67,7 +67,9 @@ export default function TraeHeroSection() {
         >
           <h1 className="text-5xl sm:text-7xl font-bold">
             <span
-              className="bg-gradient-to-r from-[#3f5f66] via-[#b5ac96] via-[#ea8e6a] to-[#53696d] bg-clip-text text-transparent"
+              className="bg-gradient-to-r 
+              from-[#3f5f66] via-[#ea8e6a] to-[#53696d]
+              bg-clip-text text-transparent"
               style={{
                 backgroundSize: "200% 200%",
                 animation: "gradient 15s ease infinite",
@@ -75,7 +77,8 @@ export default function TraeHeroSection() {
             >
               Building the Future
             </span>
-            <span className="block mt-2 bg-gradient-to-r from-[#476369] to-[#44616a] bg-clip-text text-transparent">
+            <span className="block mt-2 bg-gradient-to-r 
+              from-[#3f5f66] via-[#ea8e6a] to-[#53696d] bg-clip-text text-transparent">
               of Web Development
             </span>
           </h1>
@@ -84,7 +87,7 @@ export default function TraeHeroSection() {
             cutting-edge technology
           </p>
           <div className="flex gap-4 justify-center mt-8">
-             <GradientButton>Get Started</GradientButton>
+            <GradientButton>Get Started</GradientButton>
             <GradientButton secondary>Contact me</GradientButton>
           </div>
         </motion.div>

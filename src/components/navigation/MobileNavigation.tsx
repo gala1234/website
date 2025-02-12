@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
+import GradientButton from '../common/GradientButton';
 
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,13 +49,16 @@ export default function MobileNavigation() {
           >
             About
           </a>
-          <a
-            href="#contact"
-            className="p-3 rounded-full bg-black/[.05] dark:bg-white/[.06] hover:bg-black/[.08] dark:hover:bg-white/[.12] transition-colors font-medium text-center"
-            onClick={() => setIsOpen(false)}
+          <GradientButton
+            secondary
+            small
+            onClick={() => {
+              setIsOpen(false);
+              window.location.href = '#contact';
+            }}
           >
-            Contact
-          </a>
+            Contact me
+          </GradientButton>
         </div>
       </nav>
 

@@ -8,6 +8,7 @@ type GradientButtonProps = {
   onClick?: () => void;
   className?: string;
   secondary?: boolean;
+  small?: boolean;
 };
 
 export default function GradientButton({
@@ -15,6 +16,7 @@ export default function GradientButton({
   onClick,
   className = "",
   secondary = false,
+  small = false,
 }: GradientButtonProps) {
   return (
     <motion.button
@@ -22,12 +24,14 @@ export default function GradientButton({
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
       className={`
-        px-8 py-3 rounded-[6px] font-bold transition-all
+        rounded-[6px] font-bold transition-all
         ${
           secondary
             ? 'bg-transparent text-white relative border-2 border-transparent bg-gradient-to-r  [background-clip:padding-box] before:absolute before:inset-[-2px] before:rounded-[6px] before:bg-gradient-to-r before:from-[#3f5f66] before:via-[#b5ac96] before:via-[#ea8e6a] before:to-[#53696d] before:-z-10 before:content-[""] hover:opacity-90'
             : "bg-gradient-to-r from-[#3f5f66] via-[#b5ac96] via-[#ea8e6a] to-[#53696d] text-white hover:opacity-90 shadow-lg hover:shadow-xl"
-        } ${className}`}
+        } 
+        ${small ? "text-sm px-4 py-2" : "text-lg px-8 py-3"}    
+        ${className}`}
     >
       {children}
     </motion.button>

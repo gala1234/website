@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import GradientButton from '../common/GradientButton';
 
 export default function DesktopNavigation() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -30,7 +31,7 @@ export default function DesktopNavigation() {
 
   const getNavItemClass = (section: string) => {
     const baseClass = "p-3 font-bold relative text-black dark:text-white";
-    const gradientClass = "hover:bg-gradient-to-r hover:from-[#3f5f66] hover:via-[#b5ac96] hover:via-[#ea8e6a] hover:to-[#53696d] hover:bg-clip-text hover:text-transparent transition-all duration-300";
+    const gradientClass = "hover:bg-gradient-to-r hover:from-[#3f5f66]  hover:via-[#ea8e6a] hover:to-[#53696d] hover:bg-clip-text hover:text-transparent transition-all duration-300";
     return `${baseClass} ${gradientClass} ${activeSection === section ? 'dark:bg-white/[.12]' : 'dark:bg-white/[.06]'}`;
   };
 
@@ -55,12 +56,13 @@ export default function DesktopNavigation() {
         >
           About
         </a>
-        <a
-          href="#contact"
-          className={`${getNavItemClass('contact')}`}
+        <GradientButton
+          secondary
+          small
+          onClick={() => window.location.href = '#contact'}
         >
-          Contact
-        </a>
+          Contact me
+        </GradientButton>
       </nav>
     </>
   );
