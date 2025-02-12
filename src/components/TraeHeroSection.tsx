@@ -80,7 +80,7 @@ export default function TraeHeroSection() {
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto">
-            Hello! I&apos;m Gala. Crafting innovative solutions with
+            Hello! I&apos;m Galadriel. Crafting innovative solutions with
             cutting-edge technology
           </p>
           <div className="flex gap-4 justify-center mt-8">

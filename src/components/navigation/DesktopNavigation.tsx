@@ -1,28 +1,63 @@
+"use client"
+
+import React, { useState, useEffect } from 'react';
+
 export default function DesktopNavigation() {
+  const [activeSection, setActiveSection] = useState('hero');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['hero', 'projects', 'about', 'contact'];
+      // const scrollPosition = window.scrollY;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const getNavItemClass = (section: string) => {
+    const baseClass = "p-3 font-bold relative text-black dark:text-white";
+    const gradientClass = "hover:bg-gradient-to-r hover:from-[#3f5f66] hover:via-[#b5ac96] hover:via-[#ea8e6a] hover:to-[#53696d] hover:bg-clip-text hover:text-transparent transition-all duration-300";
+    return `${baseClass} ${gradientClass} ${activeSection === section ? 'dark:bg-white/[.12]' : 'dark:bg-white/[.06]'}`;
+  };
+
   return (
     <>
-      <nav className="hidden md:flex fixed top-0 right-8 h-screen w-16 flex-col items-center justify-center gap-8 z-50">
-      <a
+      <nav className="hidden md:flex fixed top-0 left-0 right-0 h-16 px-8 flex-row items-center justify-end gap-8 z-50 bg-white/[.8] dark:bg-black/[.8] backdrop-blur-sm">
+        <a
           href=""
-          className="p-3 rounded-full bg-black/[.08] dark:bg-white/[.12] hover:bg-black/[.12] dark:hover:bg-white/[.16] transition-colors text-black dark:text-white font-medium backdrop-blur-sm"
+          className={`${getNavItemClass('hero')}`}
         >
           Top
         </a>
         <a
           href="#projects"
-          className="p-3 rounded-full bg-black/[.08] dark:bg-white/[.12] hover:bg-black/[.12] dark:hover:bg-white/[.16] transition-colors text-black dark:text-white font-medium backdrop-blur-sm"
+          className={`${getNavItemClass('projects')}`}
         >
           Projects
         </a>
         <a
           href="#about"
-          className="p-3 rounded-full bg-black/[.08] dark:bg-white/[.12] hover:bg-black/[.12] dark:hover:bg-white/[.16] transition-colors text-black dark:text-white font-medium backdrop-blur-sm"
+          className={`${getNavItemClass('about')}`}
         >
           About
         </a>
         <a
           href="#contact"
-          className="p-3 rounded-full bg-black/[.08] dark:bg-white/[.12] hover:bg-black/[.12] dark:hover:bg-white/[.16] transition-colors text-black dark:text-white font-medium backdrop-blur-sm"
+          className={`${getNavItemClass('contact')}`}
         >
           Contact
         </a>
