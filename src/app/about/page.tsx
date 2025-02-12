@@ -1,8 +1,10 @@
 import React from 'react';
+import Navigation from '@/components/Navigation';
 
 export default function About() {
   return (
     <div className="min-h-screen p-8 sm:p-20">
+      <Navigation />
       <h1 className="text-4xl font-bold mb-8">About Me</h1>
       <div className="max-w-3xl space-y-8">
         <section>
