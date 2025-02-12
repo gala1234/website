@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Navigation from "@/components/navigation/Navigation";
 import HeroSection from '@/components/HeroSection';
+import TraeHeroSection from '@/components/TraeHeroSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
@@ -10,6 +10,7 @@ export default function Home() {
     <div className="relative">
       <Navigation />
       <main>
+        <TraeHeroSection />
         <HeroSection />
         <ProjectsSection />
         <AboutSection />
