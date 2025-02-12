@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +27,13 @@ export default function MobileNavigation() {
         }`}
       >
         <div className="flex flex-col gap-4 p-8 mt-16">
+        <a
+            href=""
+            className="p-3 rounded-full bg-black/[.05] dark:bg-white/[.06] hover:bg-black/[.08] dark:hover:bg-white/[.12] transition-colors font-medium text-center"
+            onClick={() => setIsOpen(false)}
+          >
+            Top
+          </a>
           <a
             href="#projects"
             className="p-3 rounded-full bg-black/[.05] dark:bg-white/[.06] hover:bg-black/[.08] dark:hover:bg-white/[.12] transition-colors font-medium text-center"
