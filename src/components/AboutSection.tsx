@@ -8,8 +8,9 @@ export default function AboutSection() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
           <p className="text-gray-600 dark:text-gray-300">
-            Hello! I'm a passionate developer with a love for creating elegant solutions to complex problems.
-            I specialize in web development and enjoy working with modern technologies.
+            Hello! I'm a passionate developer with a love for creating elegant
+            solutions to complex problems. I specialize in web development and
+            enjoy working with modern technologies.
           </p>
         </section>
 
@@ -51,18 +52,23 @@ export default function AboutSection() {
           <div className="space-y-6">
             <div>
               <h3 className="font-semibold">Senior Developer - Tech Company</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">2020 - Present</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                2020 - Present
+              </p>
               <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Led development of multiple web applications using React and Node.js.
-                Implemented CI/CD pipelines and mentored junior developers.
+                Led development of multiple web applications using React and
+                Node.js. Implemented CI/CD pipelines and mentored junior
+                developers.
               </p>
             </div>
             <div>
               <h3 className="font-semibold">Full Stack Developer - Startup</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">2018 - 2020</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                2018 - 2020
+              </p>
               <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Developed and maintained various web applications.
-                Worked closely with design team to implement responsive UI/UX.
+                Developed and maintained various web applications. Worked
+                closely with design team to implement responsive UI/UX.
               </p>
             </div>
           </div>

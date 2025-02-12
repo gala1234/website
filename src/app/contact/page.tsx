@@ -10,11 +10,14 @@ export default function Contact() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            I'm always open to new opportunities and collaborations. Feel free to reach out!
+            I'm always open to new opportunities and collaborations. Feel free
+            to reach out!
           </p>
           <form className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
+              <label htmlFor="name" className="block text-sm font-medium mb-1">
+                Name
+              </label>
               <input
                 type="text"
                 id="name"
@@ -24,7 +27,9 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium mb-1">
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
@@ -34,7 +39,12 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium mb-1"
+              >
+                Message
+              </label>
               <textarea
                 id="message"
                 name="message"

@@ -1,4 +1,4 @@
-import Navigation from "@/components/navigation/Navigation";
+import Navigation from '@/components/navigation/Navigation';
 // import ImageSection from '@/components/ImageSection';
 import TraeHeroSection from '@/components/TraeHeroSection';
 import ProjectsSection from '@/components/ProjectsSection';

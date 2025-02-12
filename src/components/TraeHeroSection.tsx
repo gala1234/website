@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import GradientButton from "./common/GradientButton";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import GradientButton from './common/GradientButton';
 
 type Particle = {
   initialX: number;
@@ -50,7 +50,7 @@ export default function TraeHeroSection() {
               transition={{
                 duration: particle.duration,
                 repeat: Infinity,
-                ease: "linear",
+                ease: 'linear',
               }}
             />
           ))}
@@ -71,14 +71,16 @@ export default function TraeHeroSection() {
               from-[#3f5f66] via-[#ea8e6a] to-[#53696d]
               bg-clip-text text-transparent"
               style={{
-                backgroundSize: "200% 200%",
-                animation: "gradient 15s ease infinite",
+                backgroundSize: '200% 200%',
+                animation: 'gradient 15s ease infinite',
               }}
             >
               Building the Future
             </span>
-            <span className="block mt-2 bg-gradient-to-r 
-              from-[#3f5f66] via-[#ea8e6a] to-[#53696d] bg-clip-text text-transparent">
+            <span
+              className="block mt-2 bg-gradient-to-r 
+              from-[#3f5f66] via-[#ea8e6a] to-[#53696d] bg-clip-text text-transparent"
+            >
               of Web Development
             </span>
           </h1>
@@ -87,7 +89,11 @@ export default function TraeHeroSection() {
             cutting-edge technology
           </p>
           <div className="flex gap-4 justify-center mt-8">
-            <GradientButton>Get Started</GradientButton>
+            <GradientButton
+              onClick={() => (window.location.href = '#projects')}
+            >
+              Web3 projects
+            </GradientButton>
             <GradientButton secondary>Contact me</GradientButton>
           </div>
         </motion.div>

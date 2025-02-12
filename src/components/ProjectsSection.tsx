@@ -1,5 +1,5 @@
-import React from "react";
-import GradientButton from "./common/GradientButton";
+import React from 'react';
+import GradientButton from './common/GradientButton';
 
 export default function ProjectsSection() {
   return (
