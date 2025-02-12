@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import GradientButton from "./common/GradientButton";
 
 type Particle = {
   initialX: number;
@@ -20,7 +21,7 @@ export default function TraeHeroSection() {
       initialY: Math.random() * 100,
       targetX: Math.random() * 100,
       targetY: Math.random() * 100,
-      duration: Math.random() * 10 + 10
+      duration: Math.random() * 10 + 10,
     }));
     setParticles(newParticles);
   }, []);
@@ -38,18 +39,18 @@ export default function TraeHeroSection() {
                 x: `${particle.initialX}%`,
                 y: `${particle.initialY}%`,
                 opacity: 0.2,
-                scale: 1
+                scale: 1,
               }}
               animate={{
                 x: `${particle.targetX}%`,
                 y: `${particle.targetY}%`,
                 opacity: [0.2, 0.5, 0.2],
-                scale: [1, 2, 1]
+                scale: [1, 2, 1],
               }}
               transition={{
                 duration: particle.duration,
                 repeat: Infinity,
-                ease: 'linear'
+                ease: "linear",
               }}
             />
           ))}
@@ -64,30 +65,27 @@ export default function TraeHeroSection() {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <h1 className="text-5xl sm:text-7xl font-bold text-white">
-            Building the Future
+          <h1 className="text-5xl sm:text-7xl font-bold">
+            <span
+              className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+              style={{
+                backgroundSize: "200% 200%",
+                animation: "gradient 15s ease infinite",
+              }}
+            >
+              Building the Future
+            </span>
             <span className="block mt-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               of Web Development
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto">
-            Crafting innovative solutions with cutting-edge technology
+            Hello! I&apos;m Gala. Crafting innovative solutions with
+            cutting-edge technology
           </p>
           <div className="flex gap-4 justify-center mt-8">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-opacity-90 transition-colors"
-            >
-              Get Started
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full border border-white text-white font-medium hover:bg-white/10 transition-colors"
-            >
-              Learn More
-            </motion.button>
+             <GradientButton>Get Started</GradientButton>
+            <GradientButton secondary>Contact me</GradientButton>
           </div>
         </motion.div>
       </div>
