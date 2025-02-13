@@ -7,7 +7,7 @@ export default function ImageSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-background.webp"
+          src="/futuristic_landscape.webp"
           alt="Futuristic sci-fi landscape"
           fill
           priority

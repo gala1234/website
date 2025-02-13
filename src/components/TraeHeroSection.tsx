@@ -103,9 +103,6 @@ export default function TraeHeroSection() {
             >
               Web3 projects
             </GradientButton>
-            <GradientButton secondary dark>
-              Contact me
-            </GradientButton>
           </div>
         </motion.div>
       </div>

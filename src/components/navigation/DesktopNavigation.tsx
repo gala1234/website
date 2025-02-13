@@ -64,6 +64,7 @@ export default function DesktopNavigation() {
         <GradientButton
           secondary
           small
+          dark
           onClick={() => (window.location.href = '#contact')}
         >
           Contact me

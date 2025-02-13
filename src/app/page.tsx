@@ -1,5 +1,5 @@
 import Navigation from '@/components/navigation/Navigation';
-// import ImageSection from '@/components/ImageSection';
+import ImageSection from '@/components/ImageSection';
 import TraeHeroSection from '@/components/TraeHeroSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import AboutSection from '@/components/AboutSection';
@@ -11,7 +11,7 @@ export default function Home() {
       <Navigation />
       <main>
         <TraeHeroSection />
-        {/* <ImageSection /> */}
+        <ImageSection />
         <ProjectsSection />
         <AboutSection />
         <ContactSection />

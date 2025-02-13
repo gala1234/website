@@ -50,7 +50,9 @@ export default function MobileNavigation() {
           </a>
           <a
             href="#about"
-            className="p-3 rounded-full bg-black/[.05] dark:bg-white/[.06] hover:bg-black/[.08] dark:hover:bg-white/[.12] transition-colors font-medium text-center"
+            className="p-3 rounded-full bg-black/[.05] dark:bg-white/[.06] 
+              hover:bg-black/[.08] dark:hover:bg-white/[.12] transition-colors 
+              font-medium text-center"
             onClick={() => setIsOpen(false)}
           >
             About
@@ -58,6 +60,7 @@ export default function MobileNavigation() {
           <GradientButton
             secondary
             small
+            dark
             onClick={() => {
               setIsOpen(false);
               window.location.href = '#contact';
