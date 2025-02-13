@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import GradientButton from './common/GradientButton';
 
 export default function ContactSection() {
   return (
@@ -51,12 +54,12 @@ export default function ContactSection() {
                 required
               ></textarea>
             </div>
-            <button
+            <GradientButton
               type="submit"
-              className="w-full sm:w-auto px-6 py-3 rounded-full bg-foreground text-background hover:bg-[#383838] dark:hover:bg-[#ccc] transition-colors"
+              onClick={() => console.log('sending...')}
             >
               Send Message
-            </button>
+            </GradientButton>
           </form>
         </section>
 

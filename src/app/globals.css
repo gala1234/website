@@ -1,7 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* Smooth gradient animation */
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -15,14 +14,55 @@
 }
 
 :root {
+  /* Light Mode */
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Primary Colors */
+  --primary-brown: #6D4C01;
+  --primary-peach: #FDE687;
+  --primary-green: #A6DB79;
+  --primary-violet: #6A4295;
+  --primary-gray: #CBE1D9;
+  --primary-dark-brown: #5F3912;
+  --primary-blue: #1259F4;
+  --primary-lime: #B4EF72;
+
+  /* Accent Colors */
+  --accent-hot-pink: #DF2D65;
+  --accent-golden: #DBA22B;
+  --accent-mauve: #B07782;
+  --accent-deep-rose: #C85273;
+  --accent-bright-green: #81C29F;
+
+  /* Muted & Light */
+  --muted-olive: #77722A;
+  --light-mint: #D6F8E9;
+  --light-sky: #C9F6E1;
+  --light-soft-green: #6AE7AD;
+  
+  /* Dark Mode Colors */
+  --dark-background: #0a0a0a;
+  --dark-foreground: #ededed;
+  --dark-primary: #5F3912;
+  --dark-secondary: #223877;
+  --dark-accent: #951852;
 }
+
+.bg-gradient-light {
+  background-image: linear-gradient(
+    90deg,
+    var(--primary-peach),
+    var(--light-soft-green),
+    var(--accent-bright-green)
+  );
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--dark-background);
+    --foreground: var(--dark-foreground);
   }
 }
 
@@ -30,4 +70,5 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
 }
