@@ -82,6 +82,36 @@
   color: transparent;
 }
 
+/* Gradient border */
+.border-gradient-light {
+  position: relative;
+  border: none;
+}
+
+.border-gradient-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  padding: 2px;
+  background: linear-gradient(90deg, var(--primary-peach), var(--light-soft-green), var(--accent-bright-green));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.text-gradient-dark {
+  background: linear-gradient(
+    90deg,
+    var(--dark-accent),
+    var(--dark-secondary),
+    var(--dark-primary)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
 /* Gradient backgrounds */
 .bg-gradient-light {
   background: linear-gradient(

@@ -45,9 +45,10 @@ const variantStyles = {
     text-primary    p-[2px]
   `,
   secondary: `
-text-gradient-light
-
-h-xl p-[2px]
+    text-gradient-light
+    bg-[#0A0A0A]
+    border-gradient-light
+    p-[2px]
   `,
 } as const;
 
