@@ -58,9 +58,9 @@ const variantStyles = {
     p-[2px]
   `,
   darkSecondary: `
-    text-gradient-light
+    text-gradient-dark
     bg-[#0A0A0A]
-    border-gradient-light
+    border-gradient-dark
     p-[2px]
   `,
 } as const;
