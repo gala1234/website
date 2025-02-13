@@ -11,79 +11,44 @@ export default function MobileNavigation() {
       {/* Hamburger button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`
-          fixed top-4 right-4 z-50 p-2 rounded-lg
-          bg-black/[.05] dark:bg-white/[.06]
-          hover:bg-black/[.08] dark:hover:bg-white/[.12]
-          transition-colors md:hidden
-        `}
+        className={`fixed top-4 right-4 z-50 rounded-lg bg-black/[.05] p-2 transition-colors hover:bg-black/[.08] md:hidden dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
         aria-label="Toggle navigation menu"
       >
-        <div className="w-6 h-5 relative flex flex-col justify-between">
+        <div className="relative flex h-5 w-6 flex-col justify-between">
           <span
-            className={`
-              w-full h-0.5 bg-current transform transition-transform
-              ${isOpen ? 'rotate-45 translate-y-2' : ''}
-            `}
+            className={`h-0.5 w-full transform bg-current transition-transform ${isOpen ? 'translate-y-2 rotate-45' : ''} `}
           />
           <span
-            className={`
-              w-full h-0.5 bg-current transition-opacity
-              ${isOpen ? 'opacity-0' : 'opacity-100'}
-            `}
+            className={`h-0.5 w-full bg-current transition-opacity ${isOpen ? 'opacity-0' : 'opacity-100'} `}
           />
           <span
-            className={`
-              w-full h-0.5 bg-current transform transition-transform
-              ${isOpen ? '-rotate-45 -translate-y-2' : ''}
-            `}
+            className={`h-0.5 w-full transform bg-current transition-transform ${isOpen ? '-translate-y-2 -rotate-45' : ''} `}
           />
         </div>
       </button>
 
       {/* Mobile navigation panel */}
       <nav
-        className={`
-          fixed top-0 right-0 h-full w-64
-          bg-white dark:bg-gray-900 transform
-          transition-transform duration-300 ease-in-out
-          z-40 md:hidden
-          ${isOpen ? 'translate-x-0' : 'translate-x-full'}
-        `}
+        className={`fixed top-0 right-0 z-40 h-full w-64 transform bg-white transition-transform duration-300 ease-in-out md:hidden dark:bg-gray-900 ${isOpen ? 'translate-x-0' : 'translate-x-full'} `}
       >
-        <div className="flex flex-col gap-4 p-8 mt-16">
+        <div className="mt-16 flex flex-col gap-4 p-8">
           <a
             href=""
-            className={`
-              p-3 rounded-full
-              bg-black/[.05] dark:bg-white/[.06]
-              hover:bg-black/[.08] dark:hover:bg-white/[.12]
-              transition-colors font-medium text-center
-            `}
+            className={`rounded-full bg-black/[.05] p-3 text-center font-medium transition-colors hover:bg-black/[.08] dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
             onClick={() => setIsOpen(false)}
           >
             Top
           </a>
           <a
             href="#projects"
-            className={`
-              p-3 rounded-full
-              bg-black/[.05] dark:bg-white/[.06]
-              hover:bg-black/[.08] dark:hover:bg-white/[.12]
-              transition-colors font-medium text-center
-            `}
+            className={`rounded-full bg-black/[.05] p-3 text-center font-medium transition-colors hover:bg-black/[.08] dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
             onClick={() => setIsOpen(false)}
           >
             Projects
           </a>
           <a
             href="#about"
-            className={`
-              p-3 rounded-full
-              bg-black/[.05] dark:bg-white/[.06]
-              hover:bg-black/[.08] dark:hover:bg-white/[.12]
-              transition-colors font-medium text-center
-            `}
+            className={`rounded-full bg-black/[.05] p-3 text-center font-medium transition-colors hover:bg-black/[.08] dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
             onClick={() => setIsOpen(false)}
           >
             About
@@ -105,11 +70,7 @@ export default function MobileNavigation() {
       {/* Overlay */}
       {isOpen && (
         <div
-          className={`
-            fixed inset-0
-            bg-black/20 dark:bg-black/40
-            z-30 md:hidden
-          `}
+          className={`fixed inset-0 z-30 bg-black/20 md:hidden dark:bg-black/40`}
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />

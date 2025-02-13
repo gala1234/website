@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function ImageSection() {
   return (
-    <section className="min-h-screen relative overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -21,24 +21,18 @@ export default function ImageSection() {
       </div>
 
       {/* Content */}
-      <div
-        className="
-          relative z-10 p-8 sm:p-20 
-          flex items-center justify-start 
-          min-h-screen
-        "
-      >
+      <div className="relative z-10 flex min-h-screen items-center justify-start p-8 sm:p-20">
         <motion.div
-          className="max-w-3xl bg-white/80 rounded-lg p-8 shadow-lg"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="max-w-3xl rounded-lg bg-white/80 p-8 shadow-lg"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="text-5xl sm:text-6xl font-bold mb-6 text-dark">
+          <h2 className="text-dark mb-6 text-5xl font-bold sm:text-6xl">
             Hello! I&apos;m Gala,
           </h2>
-          <h3 className="text-2xl sm:text-3xl text-dark">
+          <h3 className="text-dark text-2xl sm:text-3xl">
             web3 frontend developer and privacy advocate
           </h3>
         </motion.div>

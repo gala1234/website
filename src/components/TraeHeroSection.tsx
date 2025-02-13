@@ -27,10 +27,7 @@ export default function TraeHeroSection() {
   }, []);
 
   return (
-    <section
-      className="relative min-h-screen overflow-hidden
-    bg-gradient-to-br from-[#0A0A0A] to-[#1A1A1A]"
-    >
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#0A0A0A] to-[#1A1A1A]">
       {/* Particle effect background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute h-full w-full">
@@ -61,10 +58,7 @@ export default function TraeHeroSection() {
       </div>
 
       {/* Main content */}
-      <div
-        className="relative z-10 container mx-auto flex min-h-screen flex-col
-          items-center justify-center px-4 py-20 text-center"
-      >
+      <div className="relative z-10 container mx-auto flex min-h-screen flex-col items-center justify-center px-4 py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -73,7 +67,7 @@ export default function TraeHeroSection() {
         >
           <h1 className="text-5xl font-bold sm:text-7xl">
             <span
-              className="mt-2 block text-gradient-light"
+              className="text-gradient-light mt-2 block"
               style={{
                 backgroundSize: '200% 200%',
                 animation: 'gradient 15s ease infinite',
@@ -83,7 +77,7 @@ export default function TraeHeroSection() {
               Building the Future
             </span>
             <span
-              className="mt-2 block text-gradient-light"
+              className="text-gradient-light mt-2 block"
               style={{
                 backgroundSize: '200% 200%',
                 animation: 'gradient 15s ease infinite',

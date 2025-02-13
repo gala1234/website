@@ -5,10 +5,10 @@ export default function About() {
   return (
     <div className="min-h-screen p-8 sm:p-20">
       <Navigation />
-      <h1 className="text-4xl font-bold mb-8">About Me</h1>
+      <h1 className="mb-8 text-4xl font-bold">About Me</h1>
       <div className="max-w-3xl space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
+          <h2 className="mb-4 text-2xl font-semibold">Introduction</h2>
           <p className="text-gray-600 dark:text-gray-300">
             Hello! I'm a passionate developer with a love for creating elegant
             solutions to complex problems. I specialize in web development and
@@ -17,29 +17,29 @@ export default function About() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div className="p-4 rounded-lg bg-black/[.05] dark:bg-white/[.06]">
-              <h3 className="font-semibold mb-2">Frontend</h3>
-              <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-300">
+          <h2 className="mb-4 text-2xl font-semibold">Skills</h2>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+            <div className="rounded-lg bg-black/[.05] p-4 dark:bg-white/[.06]">
+              <h3 className="mb-2 font-semibold">Frontend</h3>
+              <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
                 <li>React</li>
                 <li>Next.js</li>
                 <li>TypeScript</li>
                 <li>Tailwind CSS</li>
               </ul>
             </div>
-            <div className="p-4 rounded-lg bg-black/[.05] dark:bg-white/[.06]">
-              <h3 className="font-semibold mb-2">Backend</h3>
-              <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-300">
+            <div className="rounded-lg bg-black/[.05] p-4 dark:bg-white/[.06]">
+              <h3 className="mb-2 font-semibold">Backend</h3>
+              <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>PostgreSQL</li>
                 <li>MongoDB</li>
               </ul>
             </div>
-            <div className="p-4 rounded-lg bg-black/[.05] dark:bg-white/[.06]">
-              <h3 className="font-semibold mb-2">Tools</h3>
-              <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-300">
+            <div className="rounded-lg bg-black/[.05] p-4 dark:bg-white/[.06]">
+              <h3 className="mb-2 font-semibold">Tools</h3>
+              <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
                 <li>Git</li>
                 <li>Docker</li>
                 <li>AWS</li>
@@ -50,7 +50,7 @@ export default function About() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+          <h2 className="mb-4 text-2xl font-semibold">Experience</h2>
           <div className="space-y-6">
             <div>
               <h3 className="font-semibold">Senior Developer - Tech Company</h3>
