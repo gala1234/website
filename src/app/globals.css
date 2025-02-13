@@ -61,6 +61,7 @@
 /* Text colors */
 .text-primary {
   color: var(--foreground);
+  @apply dark:text-gray-300;
 }
 .text-secondary {
   color: var(--primary-green);

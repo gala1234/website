@@ -88,8 +88,7 @@ export default function HeroSection() {
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-gray-300 sm:text-2xl">
-            Hello! I&apos;m Galadriel. Crafting innovative solutions with
-            cutting-edge technology
+            Crafting innovative solutions with cutting-edge technology
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <GradientButton
