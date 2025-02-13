@@ -1,6 +1,6 @@
 import Navigation from '@/components/navigation/Navigation';
 import ImageSection from '@/components/ImageSection';
-import TraeHeroSection from '@/components/TraeHeroSection';
+import HeroSection from '@/components/HeroSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
@@ -10,7 +10,7 @@ export default function Home() {
     <div className="relative">
       <Navigation />
       <main>
-        <TraeHeroSection />
+        <HeroSection />
         <ImageSection />
         <ProjectsSection />
         <AboutSection />

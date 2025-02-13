@@ -12,7 +12,7 @@ type Particle = {
   duration: number;
 };
 
-export default function TraeHeroSection() {
+export default function HeroSection() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function TraeHeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#0A0A0A] to-[#1A1A1A]">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#0A0A0A] to-[#1A1A1A] dark:from-[#000000] dark:to-[#1E1E1E]">
       {/* Particle effect background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute h-full w-full">

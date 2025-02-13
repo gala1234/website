@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useTheme } from '../ThemeProvider';
+import { useTheme } from '../../providers/ThemeProvider';
 import { motion } from 'framer-motion';
 
 export default function ThemeToggle() {
@@ -10,7 +10,7 @@ export default function ThemeToggle() {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="rounded-full p-2 transition-colors hover:bg-gray-100 dark:hover:bg-red-800 mobile-nav:static mobile-nav:right-auto mobile-nav:top-auto"
+      className="rounded-full p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 mobile-nav:static mobile-nav:right-auto mobile-nav:top-auto"
       whileTap={{ scale: 0.95 }}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
