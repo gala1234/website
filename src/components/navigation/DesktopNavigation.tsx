@@ -47,7 +47,12 @@ export default function DesktopNavigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 right-0 left-0 z-50 hidden h-16 flex-row items-center justify-end gap-8 bg-[var(--light-sunny-yellow)]/[1] px-8 backdrop-blur-sm md:flex dark:bg-white/[.8]`}
+        className={`
+          fixed top-0 right-0 left-0 z-50
+          hidden h-16 flex-row items-center justify-end gap-8
+          bg-[var(--light-sunny-yellow)]/[1] px-8
+          backdrop-blur-sm md:flex dark:bg-white/[.8]
+        `}
       >
         <a href="" className={`${getNavItemClass('hero')}`}>
           Top

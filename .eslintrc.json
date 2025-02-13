@@ -1,17 +1,9 @@
 {
-  "extends": ["next", "prettier"],
+  "extends": ["next", "next/core-web-vitals", "prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "semi": true,
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "tabWidth": 2,
-        "useTabs": false
-      }
-    ],
-    "max-len": ["error", { "code": 80, "tabWidth": 2 }]
+    "prettier/prettier": "error",
+    "max-len": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

@@ -10,9 +10,9 @@ export default function About() {
         <section>
           <h2 className="mb-4 text-2xl font-semibold">Introduction</h2>
           <p className="text-gray-600 dark:text-gray-300">
-            Hello! I'm a passionate developer with a love for creating elegant
-            solutions to complex problems. I specialize in web development and
-            enjoy working with modern technologies.
+            Hello! I&apos;m a passionate developer with a love for creating
+            elegant solutions to complex problems. I specialize in web
+            development and enjoy working with modern technologies.
           </p>
         </section>
 
