@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import GradientButton from '../common/GradientButton';
+import ThemeToggle from '../common/ThemeToggle';
 
 export default function DesktopNavigation() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -49,28 +50,33 @@ export default function DesktopNavigation() {
       <nav
         className={`
           fixed top-0 right-0 left-0 z-50
-          hidden h-16 flex-row items-center justify-end gap-8
+          hidden h-16 md:flex flex-row items-center justify-between
           bg-[var(--light-sunny-yellow)]/[1] px-8
-          backdrop-blur-sm md:flex dark:bg-white/[.8]
+          backdrop-blur-sm dark:bg-white/[.8]
         `}
       >
-        <a href="" className={`${getNavItemClass('hero')}`}>
-          Top
-        </a>
-        <a href="#projects" className={`${getNavItemClass('projects')}`}>
-          Projects
-        </a>
-        <a href="#about" className={`${getNavItemClass('about')}`}>
-          About
-        </a>
-        <GradientButton
-          secondary
-          small
-          dark
-          onClick={() => (window.location.href = '#contact')}
-        >
-          Contact me
-        </GradientButton>
+        <div className="flex items-center">
+          <ThemeToggle />
+        </div>
+        <div className="flex items-center gap-8">
+          <a href="" className={`${getNavItemClass('hero')}`}>
+            Top
+          </a>
+          <a href="#projects" className={`${getNavItemClass('projects')}`}>
+            Projects
+          </a>
+          <a href="#about" className={`${getNavItemClass('about')}`}>
+            About
+          </a>
+          <GradientButton
+            secondary
+            small
+            dark
+            onClick={() => (window.location.href = '#contact')}
+          >
+            Contact me
+          </GradientButton>
+        </div>
       </nav>
     </>
   );

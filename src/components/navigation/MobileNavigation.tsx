@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import GradientButton from '../common/GradientButton';
+import ThemeToggle from '../common/ThemeToggle';
 
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,6 +65,9 @@ export default function MobileNavigation() {
           >
             Contact me
           </GradientButton>
+          <div className="mt-auto flex justify-center pb-8">
+            <ThemeToggle />
+          </div>
         </div>
       </nav>
 
