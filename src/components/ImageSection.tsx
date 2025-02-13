@@ -32,7 +32,7 @@ export default function ImageSection() {
           <h2 className="text-dark dark:text-gray-300 mb-6 text-5xl font-bold sm:text-6xl">
             Hello! I&apos;m Gala,
           </h2>
-          <h3 className="text-primary dark:text-gray-300 text-2xl sm:text-3xl">
+          <h3 className="text-dark dark:text-gray-300 text-2xl sm:text-3xl">
             web3 frontend developer and privacy advocate
           </h3>
         </motion.div>
