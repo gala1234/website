@@ -1,4 +1,46 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+
+:root {
+  /* Primary colors */
+  --primary-brown: #6D4C01;
+  --primary-peach: #FDE687;
+  --primary-green: #A6DB79;
+  --primary-violet: #6A4295;
+  --primary-gray: #CBE1D9;
+  --primary-dark-brown: #5F3912;
+  --primary-blue: #1259F4;
+  --primary-lime: #B4EF72;
+
+  /* Accent colors */
+  --accent-hot-pink: #DF2D65;
+  --accent-golden: #DBA22B;
+  --accent-mauve: #B07782;
+  --accent-deep-rose: #C85273;
+  --accent-bright-green: #81C29F;
+
+  /* Muted colors */
+  --muted-olive: #77722A;
+  --muted-taupe: #9F9684;
+  --muted-plum: #482447;
+  --muted-steel: #73808D;
+
+  /* Light colors */
+  --light-mint: #D6F8E9;
+  --light-sky: #C9F6E1;
+  --light-soft-green: #6AE7AD;
+
+  /* Dark theme colors */
+  --dark-background: #0A0A0A;
+  --dark-foreground: #EDEDED;
+  --dark-primary: #5F3912;
+  --dark-secondary: #223877;
+  --dark-accent: #951852;
+
+  /* Default theme */
+  --background: #FFFFFF;
+  --foreground: #0A0A0A;
+}
 
 /* Smooth gradient animation */
 @keyframes gradient {
@@ -13,44 +55,36 @@
   }
 }
 
-:root {
-  /* Light Mode */
-  --background: #ffffff;
-  --foreground: #171717;
-  
-  /* Primary Colors */
-  --primary-brown: #6D4C01;
-  --primary-peach: #FDE687;
-  --primary-green: #A6DB79;
-  --primary-violet: #6A4295;
-  --primary-gray: #CBE1D9;
-  --primary-dark-brown: #5F3912;
-  --primary-blue: #1259F4;
-  --primary-lime: #B4EF72;
-
-  /* Accent Colors */
-  --accent-hot-pink: #DF2D65;
-  --accent-golden: #DBA22B;
-  --accent-mauve: #B07782;
-  --accent-deep-rose: #C85273;
-  --accent-bright-green: #81C29F;
-
-  /* Muted & Light */
-  --muted-olive: #77722A;
-  --light-mint: #D6F8E9;
-  --light-sky: #C9F6E1;
-  --light-soft-green: #6AE7AD;
-  
-  /* Dark Mode Colors */
-  --dark-background: #0a0a0a;
-  --dark-foreground: #ededed;
-  --dark-primary: #5F3912;
-  --dark-secondary: #223877;
-  --dark-accent: #951852;
+/* Text colors */
+.text-primary {
+  color: var(--foreground);
+}
+.text-secondary {
+  color: var(--primary-green);
+}
+.text-accent {
+  color: var(--accent-hot-pink);
+}
+/* Background colors */
+.bg-primary {
+  background-color: var(--foreground);
 }
 
+/* Gradient text */
+.text-gradient-light {
+  background: linear-gradient(
+    90deg,
+    var(--primary-peach),
+    var(--light-soft-green),
+    var(--accent-bright-green)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gradient backgrounds */
 .bg-gradient-light {
-  background-image: linear-gradient(
+  background: linear-gradient(
     90deg,
     var(--primary-peach),
     var(--light-soft-green),
@@ -58,6 +92,14 @@
   );
 }
 
+.bg-gradient-dark {
+  background: linear-gradient(
+    90deg,
+    var(--dark-accent),
+    var(--dark-secondary),
+    var(--dark-primary)
+  );
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -70,5 +112,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }

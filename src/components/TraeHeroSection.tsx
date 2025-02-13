@@ -27,14 +27,17 @@ export default function TraeHeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0A0A0A] to-[#1A1A1A]">
+    <section
+      className="relative min-h-screen overflow-hidden
+    bg-gradient-to-br from-[#0A0A0A] to-[#1A1A1A]"
+    >
       {/* Particle effect background */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute w-full h-full">
+        <div className="absolute h-full w-full">
           {particles.map((particle, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-white rounded-full"
+              className="absolute h-1 w-1 rounded-full bg-white"
               initial={{
                 x: `${particle.initialX}%`,
                 y: `${particle.initialY}%`,
@@ -58,37 +61,43 @@ export default function TraeHeroSection() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-screen text-center">
+      <div
+        className="relative z-10 container mx-auto flex min-h-screen flex-col
+          items-center justify-center px-4 py-20 text-center"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <h1 className="text-5xl sm:text-7xl font-bold">
+          <h1 className="text-5xl font-bold sm:text-7xl">
             <span
-              className="bg-gradient-to-r 
-              from-[#3f5f66] via-[#ea8e6a] to-[#53696d]
-              bg-clip-text text-transparent"
+              className="mt-2 block text-gradient-light"
               style={{
                 backgroundSize: '200% 200%',
                 animation: 'gradient 15s ease infinite',
+                backgroundPosition: 'left',
               }}
             >
               Building the Future
             </span>
             <span
-              className="block mt-2 bg-gradient-to-r 
-              from-[#3f5f66] via-[#ea8e6a] to-[#53696d] bg-clip-text text-transparent"
+              className="mt-2 block text-gradient-light"
+              style={{
+                backgroundSize: '200% 200%',
+                animation: 'gradient 15s ease infinite',
+                backgroundPosition: 'left',
+              }}
             >
               of Web Development
             </span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-xl text-gray-300 sm:text-2xl">
             Hello! I&apos;m Galadriel. Crafting innovative solutions with
             cutting-edge technology
           </p>
-          <div className="flex gap-4 justify-center mt-8">
+          <div className="mt-8 flex justify-center gap-4">
             <GradientButton
               onClick={() => (window.location.href = '#projects')}
             >
