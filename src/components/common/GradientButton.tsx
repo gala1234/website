@@ -20,12 +20,12 @@ const gradientColors = {
   to: 'var(--dark-secondary)',
 } as const;
 
-const gradientStyle = `
-  from-[${gradientColors.from}]
-  via-[${gradientColors.via1}]
-  via-[${gradientColors.via2}]
-  to-[${gradientColors.to}]
-`;
+const gradientStyle = [
+  `from-[${gradientColors.from}]`,
+  `via-[${gradientColors.via1}]`,
+  `via-[${gradientColors.via2}]`,
+  `to-[${gradientColors.to}]`,
+].join(' ');
 
 const baseStyles = [
   'rounded-[6px]',
@@ -41,28 +41,20 @@ const sizeStyles = {
 } as const;
 
 const variantStyles = {
-  primary: `
-    bg-gradient-light
-    text-primary
-    p-[2px]
-  `,
-  secondary: `
-    text-gradient-light
-    bg-[#0A0A0A]
-    border-gradient-light
-    p-[2px]
-  `,
-  dark: `
-    bg-gradient-dark
-    text-white
-    p-[2px]
-  `,
-  darkSecondary: `
-    text-gradient-dark
-    bg-[#0A0A0A]
-    border-gradient-dark
-    p-[2px]
-  `,
+  primary: ['bg-gradient-light', 'text-primary', 'p-[2px]'].join(' '),
+  secondary: [
+    'text-gradient-light',
+    'bg-[#0A0A0A]',
+    'border-gradient-light',
+    'p-[2px]',
+  ].join(' '),
+  dark: ['bg-gradient-dark', 'text-white', 'p-[2px]'].join(' '),
+  darkSecondary: [
+    'text-gradient-dark',
+    'bg-[#0A0A0A]',
+    'border-gradient-dark',
+    'p-[2px]',
+  ].join(' '),
 } as const;
 
 export default function GradientButton({

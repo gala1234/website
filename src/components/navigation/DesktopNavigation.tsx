@@ -9,7 +9,6 @@ export default function DesktopNavigation() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'projects', 'about', 'contact'];
-      // const scrollPosition = window.scrollY;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -27,17 +26,23 @@ export default function DesktopNavigation() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const getNavItemClass = (section: string) => {
     const baseClass = 'p-3 font-bold relative text-black dark:text-white';
-    const gradientClass = `hover:bg-gradient-to-r hover:from-[#3f5f66] 
-      hover:via-[#ea8e6a] hover:to-[#53696d] 
-      hover:bg-clip-text hover:text-transparent 
-      transition-all duration-300`;
+    const gradientClass = `
+      hover:bg-gradient-to-r
+      hover:from-[#3f5f66]
+      hover:via-[#ea8e6a]
+      hover:to-[#53696d]
+      hover:bg-clip-text
+      hover:text-transparent
+      transition-all
+      duration-300
+    `;
     const activeClass =
       activeSection === section ? 'dark:bg-white/[.12]' : 'dark:bg-white/[.06]';
     return `${baseClass} ${gradientClass} ${activeClass}`;
@@ -49,7 +54,7 @@ export default function DesktopNavigation() {
         className={`
           hidden md:flex fixed top-0 left-0 right-0 h-16 px-8
           flex-row items-center justify-end gap-8 z-50
-          bg-white/[.8] dark:bg-black/[.8] backdrop-blur-sm
+          bg-[var(--light-mint)]/[.8] dark:bg-black/[.8] backdrop-blur-sm
         `}
       >
         <a href="" className={`${getNavItemClass('hero')}`}>

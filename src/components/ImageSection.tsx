@@ -18,7 +18,13 @@ export default function ImageSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 p-8 sm:p-20 flex items-center justify-start min-h-screen">
+      <div
+        className="
+          relative z-10 p-8 sm:p-20 
+          flex items-center justify-start 
+          min-h-screen
+        "
+      >
         <div className="max-w-3xl">
           <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
             Hello! I&apos;m Gala,
