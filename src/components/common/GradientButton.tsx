@@ -10,6 +10,7 @@ interface GradientButtonProps {
   type?: 'button' | 'submit' | 'reset';
   secondary?: boolean;
   small?: boolean;
+  dark?: boolean;
 }
 
 const gradientColors = {
@@ -42,9 +43,21 @@ const sizeStyles = {
 const variantStyles = {
   primary: `
     bg-gradient-light
-    text-primary    p-[2px]
+    text-primary
+    p-[2px]
   `,
   secondary: `
+    text-gradient-light
+    bg-[#0A0A0A]
+    border-gradient-light
+    p-[2px]
+  `,
+  dark: `
+    bg-gradient-dark
+    text-white
+    p-[2px]
+  `,
+  darkSecondary: `
     text-gradient-light
     bg-[#0A0A0A]
     border-gradient-light
@@ -59,6 +72,7 @@ export default function GradientButton({
   type = undefined,
   secondary = false,
   small = false,
+  dark = false,
 }: GradientButtonProps) {
   return (
     <motion.button
@@ -67,7 +81,13 @@ export default function GradientButton({
       onClick={onClick}
       className={[
         baseStyles,
-        secondary ? variantStyles.secondary : variantStyles.primary,
+        dark
+          ? secondary
+            ? variantStyles.darkSecondary
+            : variantStyles.dark
+          : secondary
+            ? variantStyles.secondary
+            : variantStyles.primary,
         small ? sizeStyles.small : sizeStyles.default,
         className,
       ].join(' ')}
