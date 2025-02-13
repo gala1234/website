@@ -26,7 +26,13 @@ const gradientStyle = `
   to-[${gradientColors.to}]
 `;
 
-const baseStyles = 'rounded-[6px] font-bold transition-all';
+const baseStyles = [
+  'rounded-[6px]',
+  'font-bold',
+  'hover:opacity-90',
+  'hover:cursor-pointer',
+  'transition-all',
+].join(' ');
 
 const sizeStyles = {
   small: 'text-sm px-4 py-2',
@@ -36,16 +42,12 @@ const sizeStyles = {
 const variantStyles = {
   primary: `
     bg-gradient-light
-    text-primary hover:opacity-90 shadow-lg hover:shadow-xl p-[2px]
+    text-primary    p-[2px]
   `,
   secondary: `
-    border-2 border-transparent bg-clip-padding
-    p-[2px] relative hover:scale-[1.02] transition-transform text-white
-    before:absolute before:inset-0 before:rounded-[4px] before:p-[2px]
-    before:bg-gradient-to-r ${gradientStyle} before:content-['']
-    before:-z-10 before:transition-all
-    after:absolute after:inset-[2px] after:rounded-[4px]
-    after:bg-black/80 after:transition-all after:-z-10 after:content-['']
+text-gradient-light
+
+h-xl p-[2px]
   `,
 } as const;
 
