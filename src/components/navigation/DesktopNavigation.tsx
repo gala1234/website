@@ -32,15 +32,16 @@ export default function DesktopNavigation() {
   }, []);
 
   const getNavItemClass = (section: string) => {
-    const baseClass = 'p-3 font-bold relative text-black dark:text-white';
-    const gradientClass = `
-      text-gradient-dark
-      transition-all
-      duration-300
-    `;
-    const activeClass =
-      activeSection === section ? 'dark:bg-white/[.12]' : 'dark:bg-white/[.06]';
-    return `${baseClass} ${gradientClass} ${activeClass}`;
+    const baseClass = 'p-3 font-bold relative';
+    const textClass =
+      activeSection === section
+        ? 'text-accent'
+        : 'text-black dark:text-white hover:text-accent';
+    const bgClass =
+      activeSection === section
+        ? 'dark:bg-white/[.12]'
+        : 'dark:bg-white/[.06] hover:dark:bg-white/[.09]';
+    return `${baseClass} ${textClass} ${bgClass} transition-all duration-300`;
   };
 
   return (

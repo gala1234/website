@@ -11,6 +11,7 @@
   --primary-dark-brown: #5F3912;
   --primary-blue: #1259F4;
   --primary-lime: #B4EF72;
+  --primary-rose: #ee6e9a;
 
   /* Accent colors */
   --accent-hot-pink: #DF2D65;
@@ -30,6 +31,7 @@
   --light-sky: #C9F6E1;
   --light-soft-green: #6AE7AD;
   --light-sunny-yellow: #FEFFB1;
+  --light-rose: #F194B2;
 
   /* Dark theme colors */
   --dark-background: #0A0A0A;
@@ -86,8 +88,8 @@
 .text-gradient-dark {
   background: linear-gradient(
     90deg,
-    var(--dark-accent),
     var(--dark-secondary),
+    var(--accent-hot-pink),
     var(--dark-primary)
   );
   background-clip: text;

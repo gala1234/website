@@ -35,12 +35,12 @@ export default function ImageSection() {
           viewport={{ once: false }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-dark">
+          <h2 className="text-5xl sm:text-6xl font-bold mb-6 text-dark">
             Hello! I&apos;m Gala,
-          </h1>
-          <p className="text-2xl sm:text-3xl text-dark">
+          </h2>
+          <h3 className="text-2xl sm:text-3xl text-dark">
             web3 frontend developer and privacy advocate
-          </p>
+          </h3>
         </motion.div>
       </div>
     </section>
