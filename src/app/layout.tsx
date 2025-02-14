@@ -30,11 +30,11 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link
           rel="icon"
-          href="/icons/favicon.ico"
+          href="/favicon.ico"
           sizes="16x16 32x32 48x48"
           type="image/x-icon"
         />
-        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="/web-app-manifest-192x192.png" />
         <meta name="theme-color" content="#000000" />
       </head>
       <body
