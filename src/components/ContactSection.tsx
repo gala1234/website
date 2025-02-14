@@ -2,39 +2,45 @@
 
 import React from 'react';
 import GradientButton from './common/GradientButton';
+import { useLanguage } from '@/providers/LanguageProvider';
+import { contactContent } from '@/constants/contact';
 
 export default function ContactSection() {
+  const { language } = useLanguage();
+  const content = contactContent[language];
+
   return (
     <section id="contact" className="min-h-screen p-8 sm:p-20">
-      <h1 className="mb-8 text-4xl font-bold">Contact Me</h1>
+      <h1 className="mb-8 text-4xl font-bold">{content.title}</h1>
       <div className="max-w-2xl space-y-8">
         <section>
-          <h2 className="mb-4 text-2xl font-semibold">Get in Touch</h2>
+          <h2 className="mb-4 text-2xl font-semibold">{content.subtitle}</h2>
           <p className="mb-6 text-gray-600 dark:text-gray-300">
-            I&apos;m always open to new opportunities and collaborations. to
-            reach out!
+            {content.description}
           </p>
           <form className="space-y-4">
             <div>
               <label htmlFor="name" className="mb-1 block text-sm font-medium">
-                Name
+                {content.form.name.label}
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
+                placeholder={content.form.name.placeholder}
                 className={`w-full rounded-lg border border-black/[.08] bg-transparent px-4 py-2 focus:ring-2 focus:ring-black/[.12] focus:outline-none dark:border-white/[.145] dark:focus:ring-white/[.24]`}
                 required
               />
             </div>
             <div>
               <label htmlFor="email" className="mb-1 block text-sm font-medium">
-                Email
+                {content.form.email.label}
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
+                placeholder={content.form.email.placeholder}
                 className={`w-full rounded-lg border border-black/[.08] bg-transparent px-4 py-2 focus:ring-2 focus:ring-black/[.12] focus:outline-none dark:border-white/[.145] dark:focus:ring-white/[.24]`}
                 required
               />
@@ -44,11 +50,12 @@ export default function ContactSection() {
                 htmlFor="message"
                 className="mb-1 block text-sm font-medium"
               >
-                Message
+                {content.form.message.label}
               </label>
               <textarea
                 id="message"
                 name="message"
+                placeholder={content.form.message.placeholder}
                 rows={4}
                 className={`w-full rounded-lg border border-black/[.08] bg-transparent px-4 py-2 focus:ring-2 focus:ring-black/[.12] focus:outline-none dark:border-white/[.145] dark:focus:ring-white/[.24]`}
                 required
@@ -58,13 +65,13 @@ export default function ContactSection() {
               type="submit"
               onClick={() => console.log('sending...')}
             >
-              Send Message
+              {content.form.submit}
             </GradientButton>
           </form>
         </section>
 
         <section>
-          <h2 className="mb-4 text-2xl font-semibold">Connect</h2>
+          <h2 className="mb-4 text-2xl font-semibold">{content.rrss.title}</h2>
           <div className="flex gap-4">
             <a
               href="https://github.com/yourusername"
