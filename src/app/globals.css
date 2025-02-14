@@ -71,8 +71,8 @@
 .dark {
   --text-primary: var(--primary-white);
   --text-secondary: var(--dark-foreground);
-  --text-accent: var(--primary-rose);
-  --text-hover: var(--accent-hot-pink);
+  --text-accent: var(--light-soft-green);
+  --text-hover: var(--accent-bright-green);
 
   --bg-primary: var(--dark-background);
   --bg-secondary: var(--dark-primary);

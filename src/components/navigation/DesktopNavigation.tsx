@@ -47,8 +47,8 @@ export default function DesktopNavigation() {
         className={`
           fixed top-0 right-0 left-0 z-50
           hidden h-16 md:flex flex-row items-center justify-between
-          bg-[var(--light-sunny-yellow)]/[1] px-8
-          backdrop-blur-sm dark:bg-white/[.8]
+          bg-[var(--bg-primary)]/[.8] px-8
+          backdrop-blur-sm
         `}
       >
         <div className="flex items-center">
@@ -67,7 +67,6 @@ export default function DesktopNavigation() {
           <GradientButton
             secondary
             small
-            dark
             onClick={() => (window.location.href = '#contact')}
           >
             Contact me

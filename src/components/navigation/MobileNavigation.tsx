@@ -42,7 +42,6 @@ export default function MobileNavigation() {
           <GradientButton
             secondary
             small
-            dark
             onClick={() => {
               setIsOpen(false);
               window.location.href = '#contact';
