@@ -22,7 +22,7 @@ const HamburgerButton: FC<HamburgerButtonProps> = ({ isOpen, toggleMenu }) => {
           className="block w-full h-0.5 bg-current"
           variants={{
             closed: { rotate: 0, y: 0 },
-            open: { rotate: 45, y: 8 },
+            open: { rotate: 45, y: 9 },
           }}
           transition={{ duration: 0.3 }}
         />
@@ -38,7 +38,7 @@ const HamburgerButton: FC<HamburgerButtonProps> = ({ isOpen, toggleMenu }) => {
           className="block w-full h-0.5 bg-current"
           variants={{
             closed: { rotate: 0, y: 0 },
-            open: { rotate: -45, y: -8 },
+            open: { rotate: -45, y: -9 },
           }}
           transition={{ duration: 0.3 }}
         />
