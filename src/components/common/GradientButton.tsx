@@ -42,18 +42,18 @@ const sizeStyles = {
 } as const;
 
 const variantStyles = {
-  primary: ['bg-gradient-light', 'p-[2px]'].join(' '),
+  primary: ['bg-gradient', 'p-[2px]'].join(' '),
   secondary: [
-    'text-gradient-light',
+    'text-gradient',
     'bg-[#0A0A0A]',
-    'border-gradient-light',
+    'border-gradient',
     'p-[2px]',
   ].join(' '),
-  dark: ['bg-gradient-dark', 'p-[2px]'].join(' '),
+  dark: ['bg-gradient-contrast', 'p-[2px]'].join(' '),
   darkSecondary: [
-    'text-gradient-dark',
+    'text-gradient-contrast',
     'bg-[#0A0A0A]',
-    'border-gradient-dark',
+    'border-gradient-contrast',
     'p-[2px]',
   ].join(' '),
 } as const;

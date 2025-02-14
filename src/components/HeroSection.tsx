@@ -67,7 +67,7 @@ export default function HeroSection() {
         >
           <h1 className="text-5xl font-bold sm:text-7xl">
             <span
-              className="text-gradient-light mt-2 block"
+              className="text-gradient mt-2 block"
               style={{
                 backgroundSize: '200% 200%',
                 animation: 'gradient 15s ease infinite',
@@ -77,7 +77,7 @@ export default function HeroSection() {
               Building the Future
             </span>
             <span
-              className="text-gradient-light mt-2 block"
+              className="text-gradient mt-2 block"
               style={{
                 backgroundSize: '200% 200%',
                 animation: 'gradient 15s ease infinite',
@@ -87,7 +87,7 @@ export default function HeroSection() {
               of Web Development
             </span>
           </h1>
-          <p className="mx-auto max-w-2xl text-xl text-gray-300 sm:text-2xl">
+          <p className="mx-auto max-w-2xl text-xl text-primary sm:text-2xl">
             Crafting innovative solutions with cutting-edge technology
           </p>
           <div className="mt-8 flex justify-center gap-4">
