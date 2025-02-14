@@ -1,76 +1,99 @@
-import React from 'react';
+'use client';
+
+import SectionHeader from './texts/SectionHeader';
+import SectionSubHeader from './texts/SectionSubHeader';
+import SkillCard from './cards/SkillCard';
+import ExperienceCard from './cards/ExperienceCard';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+const skillsData = [
+  {
+    title: 'frontend',
+    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+  },
+  {
+    title: 'web3',
+    skills: ['Solidity', 'Ethereum EVM', 'Viem/Wagmi', 'Ethers.js'],
+  },
+  { title: 'backend', skills: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB'] },
+  { title: 'tools', skills: ['Git', 'Docker', 'AWS', 'CI/CD'] },
+];
+
+const experienceData = [
+  {
+    title: 'Web3 Frontend Developer - Nym Technologies SA',
+    period: 'Mar 2022 - Present',
+    description:
+      "Contributing to the improvement of NYM's existing frontend applications (wallet, explorer, WASM tools), optimising user experience and accessibility. Independently developing new websites, ensuring seamless access to NYM's strong network-level privacy benefits.",
+  },
+  {
+    title: 'Frontend Developer - Gaming Innovation Group',
+    period: 'Apr 2018 - Mar 2022',
+    description:
+      'Led frontend development across multiple casino platforms using Vue.js, Preact, and Web Components. Key projects included HardRock Casino, Mr. Green Casino, and development of the Wand Framework. Focused on performance, scalability, and user experience.',
+  },
+  {
+    title: 'Frontend Developer Intern - Adalab',
+    period: 'Oct 2017 - Mar 2018',
+    description:
+      'Participated in high-intensity Frontend program, collaborating on multiple web development projects using agile methodologies. Worked on both internal and external organization projects, developing strong collaborative skills.',
+  },
+];
 
 export default function AboutSection() {
   return (
     <section id="about" className="min-h-screen p-8 sm:p-20">
-      <h1 className="mb-8 text-4xl font-bold">About Me</h1>
+      <SectionHeader title="About Me" />
       <div className="max-w-3xl space-y-8">
-        <section>
-          <h2 className="mb-4 text-2xl font-semibold">Introduction</h2>
-          <p className="text-gray-600 dark:text-gray-300">
-            Hello! I&apos;m a passionate developer with a love for creating
-            elegant solutions to complex problems. I specialize in web
-            development and enjoy working with modern technologies.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="mb-4 text-2xl font-semibold">Skills</h2>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            <div className="rounded-lg bg-black/[.05] p-4 dark:bg-white/[.06]">
-              <h3 className="mb-2 font-semibold">Frontend</h3>
-              <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>TypeScript</li>
-                <li>Tailwind CSS</li>
-              </ul>
+        <section className="flex flex-col md:flex-row md:items-start md:gap-8">
+          <motion.div
+            className="relative mb-6 h-48 w-48 flex-shrink-0 md:mb-0"
+            initial={{ opacity: 0.6, scale: 0.5 }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
+            whileInView={{ opacity: 1, scale: 1 }}
+          >
+            <div className="absolute inset-0 rounded-full bg-gradient p-1">
+              <div className="h-full w-full overflow-hidden rounded-full bg-white dark:bg-black">
+                <Image
+                  src="/gala-profile.jpeg"
+                  alt="Gala's profile picture"
+                  width={192}
+                  height={192}
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
-            <div className="rounded-lg bg-black/[.05] p-4 dark:bg-white/[.06]">
-              <h3 className="mb-2 font-semibold">Backend</h3>
-              <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>PostgreSQL</li>
-                <li>MongoDB</li>
-              </ul>
-            </div>
-            <div className="rounded-lg bg-black/[.05] p-4 dark:bg-white/[.06]">
-              <h3 className="mb-2 font-semibold">Tools</h3>
-              <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-                <li>Git</li>
-                <li>Docker</li>
-                <li>AWS</li>
-                <li>CI/CD</li>
-              </ul>
-            </div>
+          </motion.div>
+          <div>
+            <SectionSubHeader title="Introduction" />
+            <p className="text-gray-600 dark:text-gray-300">
+              A civil engineer turned frontend developer with over 7 years of
+              experience, currently specializing in Web3 development. With
+              hands-on experience in integrating Web3 technologies like CosmWasm
+              and expanding expertise in viem and wagmi, I build seamless
+              decentralized applications. Passionate about privacy and
+              decentralization, I am always eager to explore innovative
+              solutions and contribute to the future of Web3.
+            </p>
           </div>
         </section>
 
         <section>
-          <h2 className="mb-4 text-2xl font-semibold">Experience</h2>
+          <SectionSubHeader title="Skills" />
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+            {skillsData.map((skill) => (
+              <SkillCard key={skill.title} {...skill} />
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <SectionHeader title="Experience" />
           <div className="space-y-6">
-            <div>
-              <h3 className="font-semibold">Senior Developer - Tech Company</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                2020 - Present
-              </p>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Led development of multiple web applications using React and
-                Node.js. Implemented CI/CD pipelines and mentored junior
-                developers.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold">Full Stack Developer - Startup</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                2018 - 2020
-              </p>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Developed and maintained various web applications. Worked
-                closely with design team to implement responsive UI/UX.
-              </p>
-            </div>
+            {experienceData.map((exp) => (
+              <ExperienceCard key={exp.title} {...exp} />
+            ))}
           </div>
         </section>
       </div>

@@ -5,6 +5,6 @@ export type NavLink = {
 
 export const sections: NavLink[] = [
   { name: 'top', link: '#' },
-  { name: 'projects', link: '#projects' },
+  { name: 'web3 projects', link: '#projects' },
   { name: 'about', link: '#about' },
 ];
