@@ -1,8 +1,13 @@
 @import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* global.css */
+
+/* 🌞 Light Mode (por defecto) */
 :root {
-  /* Primary colors */
   --primary-brown: #6d4c01;
   --primary-peach: #fde687;
   --primary-green: #a6db79;
@@ -12,21 +17,20 @@
   --primary-blue: #1259f4;
   --primary-lime: #b4ef72;
   --primary-rose: #ee6e9a;
+  --primary-beige: #f5ebdc;
+  --primary-white: #ffffff;
 
-  /* Accent colors */
   --accent-hot-pink: #df2d65;
   --accent-golden: #dba22b;
   --accent-mauve: #b07782;
   --accent-deep-rose: #c85273;
   --accent-bright-green: #81c29f;
 
-  /* Muted colors */
   --muted-olive: #77722a;
   --muted-taupe: #9f9684;
   --muted-plum: #482447;
   --muted-steel: #73808d;
 
-  /* Light colors */
   --light-mint: #d6f8e9;
   --light-sky: #c9f6e1;
   --light-soft-green: #6ae7ad;
@@ -40,9 +44,24 @@
   --dark-secondary: #223877;
   --dark-accent: #951852;
 
-  /* Default theme */
-  --background: #ffffff;
-  --foreground: #0a0a0a;
+  --text-primary: var(--dark-background);
+  --text-secondary: var(--dark-primary);
+  --text-accent: var(--accent-hot-pink);
+  --text-hover: var(--primary-rose);
+
+  --bg-primary: var(--primary-beige);
+  --bg-secondary: var(--light-sky);
+}
+
+/* 🌙 Dark Mode */
+.dark {
+  --text-primary: var(--primary-white);
+  --text-secondary: var(--dark-foreground);
+  --text-accent: var(--primary-rose);
+  --text-hover: var(--accent-hot-pink);
+
+  --bg-primary: var(--dark-background);
+  --bg-secondary: var(--dark-primary);
 }
 
 /* Smooth gradient animation */
@@ -56,22 +75,6 @@
   100% {
     background-position: 0% 50%;
   }
-}
-
-/* Text colors */
-.text-primary {
-  color: var(--foreground);
-  @apply dark:text-gray-300;
-}
-.text-secondary {
-  color: var(--primary-green);
-}
-.text-accent {
-  color: var(--accent-hot-pink);
-}
-/* Background colors */
-.bg-primary {
-  background-color: var(--foreground);
 }
 
 /* Gradient text */
@@ -173,16 +176,9 @@
   );
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--dark-background);
-    --foreground: var(--dark-foreground);
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--text-primary);
+  background: var(--bg-primary);
   font-family: Arial, Helvetica, sans-serif;
   transition:
     background 0.3s ease,

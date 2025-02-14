@@ -33,6 +33,7 @@ const baseStyles = [
   'hover:opacity-90',
   'hover:cursor-pointer',
   'transition-all',
+  'text-primary',
 ].join(' ');
 
 const sizeStyles = {
@@ -41,14 +42,14 @@ const sizeStyles = {
 } as const;
 
 const variantStyles = {
-  primary: ['bg-gradient-light', 'text-primary', 'p-[2px]'].join(' '),
+  primary: ['bg-gradient-light', 'p-[2px]'].join(' '),
   secondary: [
     'text-gradient-light',
     'bg-[#0A0A0A]',
     'border-gradient-light',
     'p-[2px]',
   ].join(' '),
-  dark: ['bg-gradient-dark', 'text-white', 'p-[2px]'].join(' '),
+  dark: ['bg-gradient-dark', 'p-[2px]'].join(' '),
   darkSecondary: [
     'text-gradient-dark',
     'bg-[#0A0A0A]',
