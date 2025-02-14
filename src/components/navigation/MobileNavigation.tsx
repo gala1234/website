@@ -12,7 +12,7 @@ export default function MobileNavigation() {
       {/* Hamburger button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed top-4 right-4 z-50 rounded-lg bg-black/[.05] p-2 transition-colors hover:bg-black/[.08] md:hidden dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
+        className={`fixed top-4 right-4 z-50 rounded-lg text-[var(--text-secondary)] bg-[var(--bg-primary)] p-2 transition-colors hover:bg-black/[.08] md:hidden dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
         aria-label="Toggle navigation menu"
       >
         <div className="relative flex h-5 w-6 flex-col justify-between">
