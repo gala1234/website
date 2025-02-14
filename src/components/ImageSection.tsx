@@ -13,7 +13,8 @@ export default function ImageSection() {
           src="/futuristic_landscape.webp"
           alt="Futuristic sci-fi landscape"
           fill
-          priority
+          priority={false}
+          loading="lazy"
           className="object-cover"
         />
         {/* Overlay for better text contrast */}
