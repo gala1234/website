@@ -41,7 +41,7 @@ export default function MobileNavigation({
           {sections.map((section) => (
             <a
               key={section.name}
-              href={`#${section.link}`}
+              href={section.link}
               className={getNavItemClass(section.name)}
               onClick={() => {
                 setActiveSection(section);

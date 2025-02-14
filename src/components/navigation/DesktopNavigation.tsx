@@ -42,7 +42,7 @@ export default function DesktopNavigation({
           {sections.map((section, i) => (
             <a
               key={section.name}
-              href={`#${section.link}`}
+              href={section.link}
               className={`${getNavItemClass(section.name)}`}
               onClick={() => setActiveSection(section)}
             >
