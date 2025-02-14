@@ -36,13 +36,9 @@ export default function DesktopNavigation() {
     const baseClass = 'p-3 font-bold relative';
     const textClass =
       activeSection === section
-        ? 'text-accent'
-        : 'text-black dark:text-white hover:text-accent';
-    const bgClass =
-      activeSection === section
-        ? 'dark:bg-white/[.12]'
-        : 'dark:bg-white/[.06] hover:dark:bg-white/[.09]';
-    return `${baseClass} ${textClass} ${bgClass} transition-all duration-300`;
+        ? 'text-[var(--text-accent)]'
+        : 'text-[var(--text-primary)] hover:text-[var(--text-hover)]';
+    return `${baseClass} ${textClass} transition-all duration-300`;
   };
 
   return (
