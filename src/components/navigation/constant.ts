@@ -1,10 +1,31 @@
 export type NavLink = {
-  name: string;
+  name: {
+    en: string;
+    es: string;
+  };
   link: string;
 };
 
 export const sections: NavLink[] = [
-  { name: 'top', link: '#' },
-  { name: 'web3 projects', link: '#projects' },
-  { name: 'about', link: '#about' },
+  {
+    name: {
+      en: 'top',
+      es: 'inicio',
+    },
+    link: '#',
+  },
+  {
+    name: {
+      en: 'web3 projects',
+      es: 'proyectos web3',
+    },
+    link: '#projects',
+  },
+  {
+    name: {
+      en: 'about',
+      es: 'sobre mí',
+    },
+    link: '#about',
+  },
 ];

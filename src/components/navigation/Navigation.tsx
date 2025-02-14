@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useLanguage } from '@/providers/LanguageProvider';
 
 import DesktopNavigation from './DesktopNavigation';
 import MobileNavigation from './MobileNavigation';

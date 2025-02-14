@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
+import { useLanguage } from '@/providers/LanguageProvider';
 import GradientButton from '../common/GradientButton';
 import ThemeToggle from '../common/ThemeToggle';
 import HamburgerButton from '../common/HamburgerButton';
@@ -14,18 +15,19 @@ export default function MobileNavigation({
   setActiveSection: (section: NavLink) => void;
   activeSection: NavLink;
 }) {
+  const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
   const getNavItemClass = useCallback(
     (section: string) => {
       const baseClass =
         'rounded-full p-3 text-center font-bold transition-colors';
-      return activeSection.name === section
+      return activeSection.name[language] === section
         ? 'text-[var(--text-accent)] ' + baseClass
         : 'text-[var(--text-primary)] hover:text-[var(--text-hover)] ' +
             baseClass;
     },
-    [activeSection]
+    [activeSection, language]
   );
 
   return (
@@ -40,15 +42,15 @@ export default function MobileNavigation({
         <div className="mt-16 flex flex-col gap-4 p-8">
           {sections.map((section) => (
             <a
-              key={section.name}
+              key={section.name[language]}
               href={section.link}
-              className={getNavItemClass(section.name)}
+              className={getNavItemClass(section.name[language])}
               onClick={() => {
                 setActiveSection(section);
                 setIsOpen(false);
               }}
             >
-              {section.name}
+              {section.name[language]}
             </a>
           ))}
 
