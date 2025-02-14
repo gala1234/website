@@ -42,7 +42,7 @@ const sizeStyles = {
 } as const;
 
 const variantStyles = {
-  primary: ['bg-gradient', 'p-[2px]'].join(' '),
+  primary: ['text-[var(--bg-primary)]', 'bg-gradient', 'p-[2px]'].join(' '),
   secondary: [
     'text-gradient',
     'bg-[#0A0A0A]',
