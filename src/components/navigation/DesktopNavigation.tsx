@@ -10,10 +10,10 @@ import { sections } from '../../constants/navigation';
 import { buttons } from '../../constants/common';
 
 export default function DesktopNavigation({
-  setActiveSection,
+  // setActiveSection,
   activeSection,
 }: {
-  setActiveSection: (section: NavLink) => void;
+  // setActiveSection: (section: NavLink) => void;
   activeSection: NavLink;
 }) {
   const { language } = useLanguage();
@@ -50,7 +50,7 @@ export default function DesktopNavigation({
               key={section.name[language]}
               href={section.link}
               className={`${getNavItemClass(section.name[language])}`}
-              onClick={() => setActiveSection(section)}
+              // onClick={() => setActiveSection(section)}
             >
               {section.name[language]}
             </a>

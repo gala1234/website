@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback } from 'react';
 import { useLanguage } from '@/providers/LanguageProvider';
+import LanguageSelector from '../common/LanguageSelector';
 import GradientButton from '../common/GradientButton';
 import ThemeToggle from '../common/ThemeToggle';
 import HamburgerButton from '../common/HamburgerButton';
@@ -67,6 +68,7 @@ export default function MobileNavigation({
           </GradientButton>
           <div className="mt-auto flex justify-center pb-8">
             <ThemeToggle />
+            <LanguageSelector />
           </div>
         </div>
       </nav>
