@@ -3,6 +3,7 @@
 import { useCallback } from 'react';
 import GradientButton from '../common/GradientButton';
 import ThemeToggle from '../common/ThemeToggle';
+import LanguageSelector from '../common/LanguageSelector';
 import type { NavLink } from './constant';
 import { sections } from './constant';
 
@@ -35,8 +36,9 @@ export default function DesktopNavigation({
           backdrop-blur-sm
         `}
       >
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
           <ThemeToggle />
+          <LanguageSelector />
         </div>
         <div className="flex items-center gap-8">
           {sections.map((section, i) => (
