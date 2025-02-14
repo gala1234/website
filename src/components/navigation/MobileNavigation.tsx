@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import GradientButton from '../common/GradientButton';
 import ThemeToggle from '../common/ThemeToggle';
+import HamburgerButton from '../common/HamburgerButton';
 
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,23 +11,7 @@ export default function MobileNavigation() {
   return (
     <>
       {/* Hamburger button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed top-4 right-4 z-50 rounded-lg text-[var(--text-secondary)] bg-[var(--bg-primary)] p-2 transition-colors hover:bg-black/[.08] md:hidden dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
-        aria-label="Toggle navigation menu"
-      >
-        <div className="relative flex h-5 w-6 flex-col justify-between">
-          <span
-            className={`h-0.5 w-full transform bg-current transition-transform ${isOpen ? 'translate-y-2 rotate-45' : ''} `}
-          />
-          <span
-            className={`h-0.5 w-full bg-current transition-opacity ${isOpen ? 'opacity-0' : 'opacity-100'} `}
-          />
-          <span
-            className={`h-0.5 w-full transform bg-current transition-transform ${isOpen ? '-translate-y-2 -rotate-45' : ''} `}
-          />
-        </div>
-      </button>
+      <HamburgerButton isOpen={isOpen} toggleMenu={() => setIsOpen(!isOpen)} />
 
       {/* Mobile navigation panel */}
       <nav
