@@ -51,6 +51,8 @@
 
   --bg-primary: var(--primary-beige);
   --bg-secondary: var(--light-sky);
+
+  --hero-gradient: linear-gradient(to bottom right, #0a0a0a, #1a1a1a);
 }
 
 /* 🌙 Dark Mode */
@@ -62,6 +64,8 @@
 
   --bg-primary: var(--dark-background);
   --bg-secondary: var(--dark-primary);
+
+  --hero-gradient: linear-gradient(to bottom right, #000000, #1e1e1e);
 }
 
 /* Smooth gradient animation */
