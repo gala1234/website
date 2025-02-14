@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import GradientButton from './common/GradientButton';
+import { heroText } from '@/constants/hero';
+import { useLanguage } from '@/providers/LanguageProvider';
 
 type Particle = {
   initialX: number;
@@ -13,6 +15,7 @@ type Particle = {
 };
 
 export default function HeroSection() {
+  const { language } = useLanguage();
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
@@ -74,7 +77,7 @@ export default function HeroSection() {
                 backgroundPosition: 'left',
               }}
             >
-              Building the Future
+              {heroText[language].title.line1}
             </span>
             <span
               className="text-gradient mt-2 block"
@@ -84,17 +87,17 @@ export default function HeroSection() {
                 backgroundPosition: 'left',
               }}
             >
-              of Web Development
+              {heroText[language].title.line2}
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-primary sm:text-2xl">
-            Crafting innovative solutions with cutting-edge technology
+            {heroText[language].subtitle}
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <GradientButton
               onClick={() => (window.location.href = '#projects')}
             >
-              Web3 projects
+              {heroText[language].cta}
             </GradientButton>
           </div>
         </motion.div>
