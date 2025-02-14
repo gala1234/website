@@ -5,8 +5,9 @@ import { useLanguage } from '@/providers/LanguageProvider';
 import GradientButton from '../common/GradientButton';
 import ThemeToggle from '../common/ThemeToggle';
 import LanguageSelector from '../common/LanguageSelector';
-import type { NavLink } from './constant';
-import { sections } from './constant';
+import type { NavLink } from '../../constants/navigation';
+import { sections } from '../../constants/navigation';
+import { buttons } from '../../constants/common';
 
 export default function DesktopNavigation({
   setActiveSection,
@@ -57,9 +58,9 @@ export default function DesktopNavigation({
           <GradientButton
             secondary
             small
-            onClick={() => (window.location.href = '#contact')}
+            onClick={() => (window.location.href = buttons.contactMe.link)}
           >
-            Contact me
+            {buttons.contactMe.name[language]}
           </GradientButton>
         </div>
       </nav>

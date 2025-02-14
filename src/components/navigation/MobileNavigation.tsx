@@ -5,8 +5,9 @@ import { useLanguage } from '@/providers/LanguageProvider';
 import GradientButton from '../common/GradientButton';
 import ThemeToggle from '../common/ThemeToggle';
 import HamburgerButton from '../common/HamburgerButton';
-import type { NavLink } from './constant';
-import { sections } from './constant';
+import type { NavLink } from '../../constants/navigation';
+import { sections } from '../../constants/navigation';
+import { buttons } from '../../constants/common';
 
 export default function MobileNavigation({
   setActiveSection,
@@ -59,10 +60,10 @@ export default function MobileNavigation({
             small
             onClick={() => {
               setIsOpen(false);
-              window.location.href = '#contact';
+              window.location.href = buttons.contactMe.link;
             }}
           >
-            Contact me
+            {buttons.contactMe.name[language]}
           </GradientButton>
           <div className="mt-auto flex justify-center pb-8">
             <ThemeToggle />
