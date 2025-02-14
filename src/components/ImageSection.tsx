@@ -3,8 +3,13 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/providers/LanguageProvider';
+import { imageText } from '@/constants/image';
 
 export default function ImageSection() {
+  const { language } = useLanguage();
+  const content = imageText[language];
+
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
@@ -31,11 +36,9 @@ export default function ImageSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <h2 className="mb-6 text-5xl font-bold sm:text-6xl">
-            Hello! I&apos;m Gala,
+            {content.greeting}
           </h2>
-          <h3 className="text-2xl sm:text-3xl">
-            web3 frontend developer and privacy advocate
-          </h3>
+          <h3 className="text-2xl sm:text-3xl">{content.role}</h3>
         </motion.div>
       </div>
     </section>
