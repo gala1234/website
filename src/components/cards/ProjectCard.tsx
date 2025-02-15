@@ -2,14 +2,15 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion, useReducedMotion } from 'framer-motion';
 
-interface ProjectCardProps {
+type ProjectCardProps = {
   title: string;
-  description: string[];
+  description: string;
   technologies: string[];
   link: string;
   image: string;
-}
+};
 
 export default function ProjectCard({
   title,
@@ -18,42 +19,74 @@ export default function ProjectCard({
   link,
   image,
 }: ProjectCardProps) {
+  const prefersReducedMotion = useReducedMotion();
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+    hover: { scale: 1.02 },
+  };
+
+  const imageVariants = {
+    hidden: { scale: 1.1 },
+    visible: { scale: 1.1 },
+    hover: { scale: 1.15 },
+  };
+
   return (
-    <a
+    <motion.a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="block rounded-lg bg-gentle-gradient p-6 transition-all hover:shadow-lg"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      whileHover={prefersReducedMotion ? undefined : 'hover'}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className="group relative block overflow-hidden rounded-xl bg-white/80 shadow-lg transition-all dark:bg-black/[.8]"
     >
-      <div className="mb-4 overflow-hidden rounded-lg">
+      <motion.div
+        variants={imageVariants}
+        initial="hidden"
+        animate="visible"
+        whileHover={prefersReducedMotion ? undefined : 'hover'}
+        transition={{ duration: 0.4 }}
+        className="relative h-48 w-full overflow-hidden"
+      >
         <Image
           src={image}
           alt={title}
-          width={800}
-          height={400}
-          className="h-48 w-full object-cover transition-transform duration-300 hover:scale-105"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-      </div>
-      <div className="mx-auto max-w-[800px]">
-        <div className="mb-4 flex flex-wrap gap-2">
+      </motion.div>
+
+      <div className="p-6">
+        <motion.h3
+          initial={{ opacity: 0.8 }}
+          whileHover={prefersReducedMotion ? undefined : { opacity: 1 }}
+          className="mb-2 text-xl font-bold"
+        >
+          {title}
+        </motion.h3>
+        <p className="mb-4 text-gray-600 dark:text-gray-300">{description}</p>
+        <div className="flex flex-wrap gap-2">
           {technologies.map((tech) => (
-            <span
+            <motion.span
               key={tech}
-              className="rounded-full bg-glow-gradient px-3 py-1 text-sm text-secondary-darker hover:text-primary"
+              initial={{ opacity: 0.8 }}
+              whileHover={
+                prefersReducedMotion ? undefined : { opacity: 1, scale: 1.05 }
+              }
+              className="rounded-full bg-black/[.05] px-3 py-1 text-sm dark:bg-white/[.06]"
             >
               {tech}
-            </span>
+            </motion.span>
           ))}
         </div>
-        <h2 className="mb-4 text-xl font-semibold text-primary">{title}</h2>
-        <ul className="mb-4 list-disc space-y-2 pl-5">
-          {description.map((item, index) => (
-            <li key={index} className="text-secondary">
-              {item}
-            </li>
-          ))}
-        </ul>
       </div>
-    </a>
+    </motion.a>
   );
 }
