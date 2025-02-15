@@ -4,6 +4,8 @@ import React from 'react';
 import GradientButton from '../common/GradientButton';
 import { useLanguage } from '@/providers/LanguageProvider';
 import { contactContent } from '@/constants/contact';
+import SectionHeader from '../texts/SectionHeader';
+import SectionSubHeader from '../texts/SectionSubHeader';
 
 export default function ContactSection() {
   const { language } = useLanguage();
@@ -11,10 +13,10 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="min-h-screen p-8 sm:p-20">
-      <h1 className="mb-8 text-4xl font-bold">{content.title}</h1>
+      <SectionHeader title={content.title} />
       <div className="max-w-2xl space-y-8">
         <section>
-          <h2 className="mb-4 text-2xl font-semibold">{content.subtitle}</h2>
+          <SectionSubHeader title={content.subtitle} />
           <p className="mb-6 text-gray-600 dark:text-gray-300">
             {content.description}
           </p>
