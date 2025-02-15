@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 type ProjectCardProps = {
   title: string;
-  description: string;
+  description: string[];
   technologies: string[];
   link: string;
   image: string;
@@ -71,7 +71,11 @@ export default function ProjectCard({
         >
           {title}
         </motion.h3>
-        <p className="mb-4 text-gray-600 dark:text-gray-300">{description}</p>
+        {description.map((line) => (
+          <p key={line} className="mb-4 text-secondary">
+            {line}
+          </p>
+        ))}
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech) => (
             <motion.span
