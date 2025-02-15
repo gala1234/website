@@ -41,11 +41,12 @@
   --dark-background: #0a0a0a;
   --dark-foreground: #d1d5db;
   --dark-primary: #4b5563;
-  --dark-secondary: #223877;
+  --dark-secondary: #374151;
   --dark-accent: #951852;
 
   --text-primary: var(--dark-background);
   --text-secondary: var(--dark-primary);
+  --text-secondary-darker: var(--dark-secondary);
   --text-accent: var(--accent-hot-pink);
   --text-hover: var(--primary-rose);
 
@@ -70,12 +71,23 @@
     var(--primary-white),
     rgb(249, 250, 251)
   );
+  --glow-gradient: linear-gradient(
+    90deg,
+    rgb(239, 246, 255),
+    rgb(245, 243, 255)
+  );
+  --glow-gradient-hover: linear-gradient(
+    90deg,
+    rgb(219, 234, 254),
+    rgb(237, 233, 254)
+  );
 }
 
 /* 🌙 Dark Mode */
 .dark {
   --text-primary: var(--primary-white);
   --text-secondary: var(--dark-foreground);
+  --text-secondary-darker: var(--dark-foreground);
   --text-accent: var(--light-soft-green);
   --text-hover: var(--accent-bright-green);
 
@@ -100,6 +112,16 @@
     rgb(31, 41, 55, 0.5),
     rgb(55, 65, 81, 0.5)
   );
+  --glow-gradient: linear-gradient(
+    90deg,
+    rgba(30, 58, 138, 0.2),
+    rgba(88, 28, 135, 0.2)
+  );
+  --glow-gradient-hover: linear-gradient(
+    90deg,
+    rgba(30, 58, 138, 0.3),
+    rgba(88, 28, 135, 0.3)
+  );
 }
 
 /* Smooth gradient animation */
@@ -120,6 +142,9 @@
 }
 .text-secondary {
   color: var(--text-secondary);
+}
+.text-secondary-darker {
+  color: var(--text-secondary-darker);
 }
 
 /* Gradient text */
@@ -193,6 +218,15 @@
 
 .bg-gentle-gradient {
   background: var(--gentle-gradient);
+}
+
+.bg-glow-gradient {
+  background: var(--glow-gradient);
+  transition: background 0.3s ease;
+}
+
+.bg-glow-gradient:hover {
+  background: var(--glow-gradient-hover);
 }
 
 html {

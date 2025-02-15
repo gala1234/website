@@ -25,7 +25,7 @@ export default function ProjectCard({
         {technologies.map((tech) => (
           <span
             key={tech}
-            className="rounded-full bg-gradient-to-r from-blue-50 to-purple-50 px-3 py-1 text-sm text-gray-700 hover:from-blue-100 hover:to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 dark:text-gray-300 dark:hover:from-blue-900/30 dark:hover:to-purple-900/30"
+            className="rounded-full bg-glow-gradient px-3 py-1 text-sm text-secondary-darker hover:text-primary"
           >
             {tech}
           </span>
