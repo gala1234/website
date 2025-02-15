@@ -34,7 +34,6 @@ const baseStyles = [
   'hover:opacity-90',
   'hover:cursor-pointer',
   'transition-all',
-  'text-primary',
   'w-full',
   'sm:w-auto',
   'disabled:opacity-50',
