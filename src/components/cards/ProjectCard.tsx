@@ -4,7 +4,7 @@ import React from 'react';
 
 interface ProjectCardProps {
   title: string;
-  description: string;
+  description: string[];
   technologies: string[];
 }
 
@@ -16,7 +16,11 @@ export default function ProjectCard({
   return (
     <div className="rounded-lg border border-black/[.08] p-6 transition-all hover:border-transparent hover:shadow-lg dark:border-white/[.145]">
       <h2 className="mb-4 text-xl font-semibold">{title}</h2>
-      <p className="mb-4 text-gray-600 dark:text-gray-300">{description}</p>
+      {description.map((paragraph, index) => (
+        <p key={index} className="mb-4 text-gray-600 dark:text-gray-300">
+          {paragraph}
+        </p>
+      ))}
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech) => (
           <span
