@@ -21,7 +21,7 @@ export default function ProjectsSection() {
             key={index}
             title={project.title}
             description={project.description}
-            technologies={projectsContent.technologies}
+            technologies={project.technologies}
           />
         ))}
       </div>
