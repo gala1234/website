@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import GradientButton from './common/GradientButton';
+import GradientButton from '../common/GradientButton';
 import { useLanguage } from '@/providers/LanguageProvider';
 import { projectsContent } from '@/constants/projects';
 import { buttons } from '@/constants/common';

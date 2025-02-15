@@ -1,9 +1,9 @@
 import Navigation from '@/components/navigation/Navigation';
-import ImageSection from '@/components/ImageSection';
-import HeroSection from '@/components/HeroSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import AboutSection from '@/components/AboutSection';
-import ContactSection from '@/components/ContactSection';
+import ImageSection from '@/components/sections/ImageSection';
+import HeroSection from '@/components/sections/HeroSection';
+import ProjectsSection from '@/components/sections/ProjectsSection';
+import AboutSection from '@/components/sections/AboutSection';
+import ContactSection from '@/components/sections/ContactSection';
 
 export default function Home() {
   return (

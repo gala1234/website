@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import GradientButton from './common/GradientButton';
+import GradientButton from '../common/GradientButton';
 import { heroText } from '@/constants/hero';
 import { useLanguage } from '@/providers/LanguageProvider';
 

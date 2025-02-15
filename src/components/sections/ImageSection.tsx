@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/providers/LanguageProvider';
 import { imageText } from '@/constants/image';
-import SectionHeader from './texts/SectionHeader';
-import SectionSubHeader from './texts/SectionSubHeader';
+import SectionHeader from '../texts/SectionHeader';
+import SectionSubHeader from '../texts/SectionSubHeader';
 
 export default function ImageSection() {
   const { language } = useLanguage();

@@ -1,10 +1,10 @@
 'use client';
 
-import SectionHeader from './texts/SectionHeader';
-import SectionSubHeader from './texts/SectionSubHeader';
-import SkillCard from './cards/SkillCard';
-import ExperienceCard from './cards/ExperienceCard';
-import ProfileImage from './common/ProfileImage';
+import SectionHeader from '../texts/SectionHeader';
+import SectionSubHeader from '../texts/SectionSubHeader';
+import SkillCard from '../cards/SkillCard';
+import ExperienceCard from '../cards/ExperienceCard';
+import ProfileImage from '../common/ProfileImage';
 import { aboutContent } from '@/constants/about';
 import { useLanguage } from '@/providers/LanguageProvider';
 
