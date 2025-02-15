@@ -11,7 +11,10 @@ export default function ImageSection() {
   const content = imageText[language];
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section
+      id="imageSection"
+      className="relative min-h-screen overflow-hidden"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

@@ -6,14 +6,12 @@ import GradientButton from '../common/GradientButton';
 import ThemeToggle from '../common/ThemeToggle';
 import LanguageSelector from '../common/LanguageSelector';
 import type { NavLink } from '../../constants/navigation';
-import { sections } from '../../constants/navigation';
+import { navigationLinks } from '../../constants/navigation';
 import { buttons } from '../../constants/common';
 
 export default function DesktopNavigation({
-  // setActiveSection,
   activeSection,
 }: {
-  // setActiveSection: (section: NavLink) => void;
   activeSection: NavLink;
 }) {
   const { language } = useLanguage();
@@ -45,12 +43,11 @@ export default function DesktopNavigation({
           <LanguageSelector />
         </div>
         <div className="flex items-center gap-8">
-          {sections.map((section, i) => (
+          {navigationLinks.map((section, i) => (
             <a
               key={section.name[language]}
               href={section.link}
               className={`${getNavItemClass(section.name[language])}`}
-              // onClick={() => setActiveSection(section)}
             >
               {section.name[language]}
             </a>

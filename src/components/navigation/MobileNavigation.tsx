@@ -7,14 +7,12 @@ import GradientButton from '../common/GradientButton';
 import ThemeToggle from '../common/ThemeToggle';
 import HamburgerButton from '../common/HamburgerButton';
 import type { NavLink } from '../../constants/navigation';
-import { sections } from '../../constants/navigation';
+import { navigationLinks } from '../../constants/navigation';
 import { buttons } from '../../constants/common';
 
 export default function MobileNavigation({
-  setActiveSection,
   activeSection,
 }: {
-  setActiveSection: (section: NavLink) => void;
   activeSection: NavLink;
 }) {
   const { language } = useLanguage();
@@ -42,13 +40,12 @@ export default function MobileNavigation({
         className={`fixed top-0 right-0 z-40 h-full w-64 transform bg-[var(--bg-primary)] transition-transform duration-300 ease-in-out md:hidden  ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="mt-16 flex flex-col gap-4 p-8">
-          {sections.map((section) => (
+          {navigationLinks.map((section) => (
             <a
               key={section.name[language]}
               href={section.link}
               className={getNavItemClass(section.name[language])}
               onClick={() => {
-                setActiveSection(section);
                 setIsOpen(false);
               }}
             >
@@ -66,7 +63,7 @@ export default function MobileNavigation({
           >
             {buttons.contactMe.name[language]}
           </GradientButton>
-          <div className="mt-auto flex justify-center pb-8">
+          <div className="mt-auto flex justify-between pb-8">
             <ThemeToggle />
             <LanguageSelector />
           </div>

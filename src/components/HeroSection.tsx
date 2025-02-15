@@ -30,7 +30,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[var(--hero-gradient)]">
+    <section
+      id="hero"
+      className="relative min-h-screen overflow-hidden bg-[var(--hero-gradient)]"
+    >
       {/* Particle effect background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute h-full w-full">

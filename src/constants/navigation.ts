@@ -4,15 +4,25 @@ export type NavLink = {
     es: string;
   };
   link: string;
+  id: string;
 };
 
-export const sections: NavLink[] = [
+export const sectionsIds = [
+  'hero',
+  'imageSection',
+  'projects',
+  'about',
+  'contact',
+] as const;
+
+export const navigationLinks: NavLink[] = [
   {
     name: {
       en: 'top',
       es: 'inicio',
     },
     link: '#',
+    id: 'hero',
   },
   {
     name: {
@@ -20,6 +30,7 @@ export const sections: NavLink[] = [
       es: 'proyectos web3',
     },
     link: '#projects',
+    id: 'projects',
   },
   {
     name: {
@@ -27,5 +38,6 @@ export const sections: NavLink[] = [
       es: 'sobre mí',
     },
     link: '#about',
+    id: 'about',
   },
 ];
