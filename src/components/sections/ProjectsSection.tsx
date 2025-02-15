@@ -25,9 +25,14 @@ export default function ProjectsSection() {
           />
         ))}
       </div>
-      <GradientButton secondary>
-        {buttons.contactMe.name[language]}
-      </GradientButton>
+      <div className="mt-8 flex justify-center">
+        <GradientButton
+          secondary
+          onClick={() => (window.location.href = buttons.contactMe.link)}
+        >
+          {buttons.contactMe.name[language]}
+        </GradientButton>
+      </div>
     </section>
   );
 }
