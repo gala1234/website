@@ -44,7 +44,7 @@ export default function ProjectCard({
       whileHover={prefersReducedMotion ? undefined : 'hover'}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="group relative block overflow-hidden rounded-xl bg-white/80 shadow-lg transition-all dark:bg-black/[.8]"
+      className="group relative block overflow-hidden rounded-xl bg-gentle-gradient shadow-lg transition-all"
     >
       <motion.div
         variants={imageVariants}

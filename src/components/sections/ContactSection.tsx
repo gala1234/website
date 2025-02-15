@@ -1,6 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
 import GradientButton from '../common/GradientButton';
 import { useLanguage } from '@/providers/LanguageProvider';
 import { contactContent } from '@/constants/contact';
@@ -10,6 +12,28 @@ import SectionSubHeader from '../texts/SectionSubHeader';
 export default function ContactSection() {
   const { language } = useLanguage();
   const content = contactContent[language];
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        e.currentTarget,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      alert('Message sent successfully!');
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <section id="contact" className="min-h-screen p-8 sm:p-20">
@@ -20,7 +44,7 @@ export default function ContactSection() {
           <p className="mb-6 text-gray-600 dark:text-gray-300">
             {content.description}
           </p>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name" className="mb-1 block text-sm font-medium">
                 {content.form.name.label}
@@ -63,11 +87,8 @@ export default function ContactSection() {
                 required
               ></textarea>
             </div>
-            <GradientButton
-              type="submit"
-              onClick={() => console.log('sending...')}
-            >
-              {content.form.submit}
+            <GradientButton type="submit" disabled={sending}>
+              {sending ? 'Sending...' : content.form.submit}
             </GradientButton>
           </form>
         </section>

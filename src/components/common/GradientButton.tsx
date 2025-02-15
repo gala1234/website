@@ -11,6 +11,7 @@ interface GradientButtonProps {
   secondary?: boolean;
   small?: boolean;
   dark?: boolean;
+  disabled?: boolean;
 }
 
 const gradientColors = {
@@ -36,6 +37,9 @@ const baseStyles = [
   'text-primary',
   'w-full',
   'sm:w-auto',
+  'disabled:opacity-50',
+  'disabled:cursor-not-allowed',
+  'disabled:hover:opacity-50',
 ].join(' ');
 
 const sizeStyles = {
@@ -68,12 +72,14 @@ export default function GradientButton({
   secondary = false,
   small = false,
   dark = false,
+  disabled = false,
 }: GradientButtonProps) {
   return (
     <motion.button
       type={type}
-      whileTap={{ scale: 0.95 }}
+      whileTap={disabled ? undefined : { scale: 0.95 }}
       onClick={onClick}
+      disabled={disabled}
       className={[
         baseStyles,
         dark
