@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
+import SectionHeader from '../texts/SectionHeader';
 
 type ProjectCardProps = {
   title: string;
@@ -41,7 +42,6 @@ export default function ProjectCard({
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
-      whileHover={prefersReducedMotion ? undefined : 'hover'}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="group relative block overflow-hidden rounded-xl bg-gentle-gradient shadow-lg transition-all"
@@ -64,13 +64,7 @@ export default function ProjectCard({
       </motion.div>
 
       <div className="p-6">
-        <motion.h3
-          initial={{ opacity: 0.8 }}
-          whileHover={prefersReducedMotion ? undefined : { opacity: 1 }}
-          className="mb-2 text-xl font-bold"
-        >
-          {title}
-        </motion.h3>
+        <SectionHeader title={title} />
         {description.map((line) => (
           <p key={line} className="mb-4 text-secondary">
             {line}
