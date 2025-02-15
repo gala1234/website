@@ -34,6 +34,8 @@ const baseStyles = [
   'hover:cursor-pointer',
   'transition-all',
   'text-primary',
+  'w-full',
+  'sm:w-auto',
 ].join(' ');
 
 const sizeStyles = {
