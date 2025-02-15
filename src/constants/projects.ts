@@ -1,9 +1,29 @@
-export const projectsContent = {
+interface Project {
+  title: string;
+  link: string;
+  image: string;
+  description: string[];
+  technologies: string[];
+}
+
+interface ProjectsLanguageContent {
+  title: string;
+  projects: Project[];
+}
+
+interface ProjectsContent {
+  en: ProjectsLanguageContent;
+  es: ProjectsLanguageContent;
+}
+
+export const projectsContent: ProjectsContent = {
   en: {
     title: 'Projects',
     projects: [
       {
         title: 'Simple Wallet Connection & Balance Display',
+        link: 'www.project1.com',
+        image: '/simple_wallet.webp',
         description: [
           "Connect to user's wallet (using wagmi's useConnect hook).",
           'Display connected wallet address.',
@@ -14,6 +34,8 @@ export const projectsContent = {
       },
       {
         title: 'Basic NFT Viewer',
+        link: 'www.project2.com',
+        image: '/nft_viewer.webp',
         description: [
           'Connect wallet',
           'User inputs an NFT contract address and token ID.',
@@ -24,6 +46,8 @@ export const projectsContent = {
       },
       {
         title: 'Simple Token Transfer UI',
+        link: 'www.project3.com',
+        image: '/basic_transfer.webp',
         description: [
           'Connect wallet',
           'User inputs recipient address and token amount.',
@@ -45,6 +69,8 @@ export const projectsContent = {
     projects: [
       {
         title: 'Conexión de billetera y visualización de saldo',
+        link: 'www.project1.com',
+        image: '/simple_wallet.webp',
         description: [
           'Conecta a la billetera del usuario (utilizando el hook useConnect de wagmi).',
           'Muestra la dirección de la billetera conectada.',
@@ -55,6 +81,8 @@ export const projectsContent = {
       },
       {
         title: 'Visualizador básico de NFT',
+        link: 'www.project2.com',
+        image: '/nft_viewer.webp',
         description: [
           'Conecta la billetera',
           'El usuario ingresa una dirección de contrato de NFT y un ID de token.',
@@ -65,6 +93,8 @@ export const projectsContent = {
       },
       {
         title: 'Interfaz de transferencia de tokens básica',
+        link: 'www.project3.com',
+        image: '/basic_transfer.webp',
         description: [
           'Conecta la billetera',
           'El usuario ingresa una dirección de destinatario y una cantidad de tokens.',

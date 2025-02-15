@@ -1,7 +1,3 @@
-import { title } from 'process';
-
-export type Language = 'en' | 'es';
-
 export const aboutContent = {
   en: {
     title: 'About Me',

@@ -22,6 +22,8 @@ export default function ProjectsSection() {
             title={project.title}
             description={project.description}
             technologies={project.technologies}
+            link={project.link}
+            image={project.image}
           />
         ))}
       </div>
