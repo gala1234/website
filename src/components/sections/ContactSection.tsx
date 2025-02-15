@@ -76,7 +76,7 @@ export default function ContactSection() {
           <h2 className="mb-4 text-2xl font-semibold">{content.rrss.title}</h2>
           <div className="flex gap-4">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/gala1234"
               target="_blank"
               rel="noopener noreferrer"
               className={`rounded-full bg-black/[.05] p-3 transition-colors hover:bg-black/[.08] dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
@@ -84,20 +84,12 @@ export default function ContactSection() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/galadriel-calero"
               target="_blank"
               rel="noopener noreferrer"
               className={`rounded-full bg-black/[.05] p-3 transition-colors hover:bg-black/[.08] dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
             >
               LinkedIn
-            </a>
-            <a
-              href="https://twitter.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`rounded-full bg-black/[.05] p-3 transition-colors hover:bg-black/[.08] dark:bg-white/[.06] dark:hover:bg-white/[.12]`}
-            >
-              Twitter
             </a>
           </div>
         </section>
