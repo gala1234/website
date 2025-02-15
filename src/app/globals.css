@@ -39,8 +39,8 @@
 
   /* Dark theme colors */
   --dark-background: #0a0a0a;
-  --dark-foreground: #ededed;
-  --dark-primary: #5f3912;
+  --dark-foreground: #d1d5db;
+  --dark-primary: #4b5563;
   --dark-secondary: #223877;
   --dark-accent: #951852;
 
@@ -64,6 +64,11 @@
     var(--primary-peach),
     var(--light-soft-green),
     var(--accent-bright-green)
+  );
+  --gentle-gradient: linear-gradient(
+    to bottom right,
+    var(--primary-white),
+    rgb(249, 250, 251)
   );
 }
 
@@ -90,6 +95,11 @@
     var(--accent-hot-pink),
     var(--dark-primary)
   );
+  --gentle-gradient: linear-gradient(
+    to bottom right,
+    rgb(31, 41, 55, 0.5),
+    rgb(55, 65, 81, 0.5)
+  );
 }
 
 /* Smooth gradient animation */
@@ -103,6 +113,13 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
 }
 
 /* Gradient text */
@@ -172,6 +189,10 @@
 
 .bg-gradient-contrast {
   background: var(--accent-gradient-contrast);
+}
+
+.bg-gentle-gradient {
+  background: var(--gentle-gradient);
 }
 
 html {

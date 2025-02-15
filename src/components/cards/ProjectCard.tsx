@@ -14,10 +14,10 @@ export default function ProjectCard({
   technologies,
 }: ProjectCardProps) {
   return (
-    <div className="rounded-lg border border-black/[.08] p-6 transition-all hover:border-transparent hover:shadow-lg dark:border-white/[.145]">
-      <h2 className="mb-4 text-xl font-semibold">{title}</h2>
+    <div className="rounded-lg bg-gentle-gradient p-6 transition-all hover:shadow-lg">
+      <h2 className="mb-4 text-xl font-semibold text-primary">{title}</h2>
       {description.map((paragraph, index) => (
-        <p key={index} className="mb-4 text-gray-600 dark:text-gray-300">
+        <p key={index} className="mb-4 text-secondary">
           {paragraph}
         </p>
       ))}
@@ -25,7 +25,7 @@ export default function ProjectCard({
         {technologies.map((tech) => (
           <span
             key={tech}
-            className="rounded-full bg-black/[.05] px-3 py-1 text-sm dark:bg-white/[.06]"
+            className="rounded-full bg-gradient-to-r from-blue-50 to-purple-50 px-3 py-1 text-sm text-gray-700 hover:from-blue-100 hover:to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 dark:text-gray-300 dark:hover:from-blue-900/30 dark:hover:to-purple-900/30"
           >
             {tech}
           </span>
