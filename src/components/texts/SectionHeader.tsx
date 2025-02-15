@@ -3,5 +3,5 @@ interface SectionHeaderProps {
 }
 
 export default function SectionHeader({ title }: SectionHeaderProps) {
-  return <h1 className="mb-8 text-4xl font-bold">{title}</h1>;
+  return <h2 className="mb-8 text-4xl font-bold">{title}</h2>;
 }
