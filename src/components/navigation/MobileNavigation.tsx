@@ -17,6 +17,7 @@ export default function MobileNavigation({
 }) {
   const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const displayLinks = navigationLinks.slice(0, -1);
 
   const getNavItemClass = useCallback(
     (section: string) => {
@@ -40,7 +41,7 @@ export default function MobileNavigation({
         className={`fixed top-0 right-0 z-40 h-full w-64 transform bg-[var(--bg-primary)] transition-transform duration-300 ease-in-out md:hidden  ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="mt-16 flex flex-col gap-4 p-8">
-          {navigationLinks.map((section) => (
+          {displayLinks.map((section) => (
             <a
               key={section.name[language]}
               href={section.link}

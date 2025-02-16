@@ -40,4 +40,12 @@ export const navigationLinks: NavLink[] = [
     link: '#about',
     id: 'about',
   },
+  {
+    name: {
+      en: 'contact',
+      es: 'contacto',
+    },
+    link: '#contact',
+    id: 'contact',
+  },
 ];

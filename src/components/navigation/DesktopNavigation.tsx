@@ -15,6 +15,7 @@ export default function DesktopNavigation({
   activeSection: NavLink;
 }) {
   const { language } = useLanguage();
+  const displayLinks = navigationLinks.slice(0, -1);
 
   const getNavItemClass = useCallback(
     (section: string) => {
@@ -43,7 +44,7 @@ export default function DesktopNavigation({
           <LanguageSelector />
         </div>
         <div className="flex items-center gap-8">
-          {navigationLinks.map((section, i) => (
+          {displayLinks?.map((section, i) => (
             <a
               key={section.name[language]}
               href={section.link}
