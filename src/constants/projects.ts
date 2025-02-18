@@ -34,7 +34,7 @@ export const projectsContent: ProjectsContent = {
       },
       {
         title: 'Basic NFT Viewer',
-        link: 'www.project2.com',
+        link: 'https://nft-market-place-swart.vercel.app/',
         image: '/nft_viewer.webp',
         description: [
           'Connect wallet',
@@ -46,7 +46,7 @@ export const projectsContent: ProjectsContent = {
       },
       {
         title: 'Simple Token Transfer UI',
-        link: 'www.project3.com',
+        link: 'https://nft-market-place-swart.vercel.app/',
         image: '/basic_transfer.webp',
         description: [
           'Connect wallet',
