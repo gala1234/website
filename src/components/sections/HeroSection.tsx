@@ -71,7 +71,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <h1 className="text-5xl font-bold sm:text-7xl">
+          <h1 className="text-5xl font-bold sm:text-7xl leading-[1.2em]">
             <span
               className="text-gradient mt-2 block"
               style={{

@@ -17,10 +17,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('en');
 
   useEffect(() => {
-    // Load saved language preference from localStorage
+    // Load saved language preference from localStorage or browser settings
     const savedLanguage = localStorage.getItem('language') as Language;
     if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'es')) {
       setLanguage(savedLanguage);
+    } else {
+      // Check browser language preference
+      const browserLang = navigator.language.toLowerCase();
+      const initialLang = browserLang.startsWith('es') ? 'es' : 'en';
+      setLanguage(initialLang);
+      localStorage.setItem('language', initialLang);
     }
   }, []);
 
