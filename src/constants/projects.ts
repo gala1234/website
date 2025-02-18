@@ -34,7 +34,7 @@ export const projectsContent: ProjectsContent = {
       },
       {
         title: 'Basic NFT Viewer',
-        link: 'https://nft-market-place-swart.vercel.app/',
+        link: 'https://nft-market-place-swart.vercel.app',
         image: '/nft_viewer.webp',
         description: [
           'Connect wallet',
@@ -81,7 +81,7 @@ export const projectsContent: ProjectsContent = {
       },
       {
         title: 'Visualizador básico de NFT',
-        link: 'www.project2.com',
+        link: 'https://nft-market-place-swart.vercel.app',
         image: '/nft_viewer.webp',
         description: [
           'Conecta la billetera',
