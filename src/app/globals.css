@@ -1,10 +1,88 @@
 @import 'tailwindcss';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@custom-variant dark (&:where(.dark, .dark *));
 
-/* global.css */
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-light-blue: 72 204 235;
+    --primary-purple: 185 66 219;
+    --primary-tan: 215 171 116;
+    --primary-lavender: 230 206 231;
+    --primary-blue: 84 85 195;
+    --primary-dark-purple: 62 51 127;
+    --primary-brown: 145 97 74;
+    --primary-slate: 83 107 131;
+    --primary-dark-brown: 98 60 55;
+    --primary-burgundy: 58 34 48;
+
+    /* Theme Variables */
+    --text-primary: var(--primary-dark-brown);
+    --text-secondary: var(--primary-slate);
+    --text-accent: var(--primary-purple);
+
+    --bg-primary: 255 255 255;
+    --bg-secondary: var(--primary-light-blue);
+    --bg-accent: var(--primary-purple);
+
+    --gradient-primary: linear-gradient(
+      90deg,
+      rgb(var(--primary-light-blue)),
+      rgb(var(--primary-purple))
+    );
+    --gradient-secondary: linear-gradient(
+      90deg,
+      rgb(var(--primary-tan)),
+      rgb(var(--primary-lavender))
+    );
+  }
+
+  :root[class='dark'] {
+    --text-primary: var(--primary-lavender);
+    --text-secondary: var(--primary-light-blue);
+    --text-accent: var(--primary-purple);
+
+    --bg-primary: var(--primary-dark-brown);
+    --bg-secondary: var(--primary-burgundy);
+    --bg-accent: var(--primary-dark-purple);
+
+    --gradient-primary: linear-gradient(
+      90deg,
+      rgb(var(--primary-dark-purple)),
+      rgb(var(--primary-purple))
+    );
+    --gradient-secondary: linear-gradient(
+      90deg,
+      rgb(var(--primary-burgundy)),
+      rgb(var(--primary-slate))
+    );
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-secondary {
+    background-image: var(--gradient-secondary);
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans transition-colors duration-300;
+    color: rgb(var(--text-primary));
+    background: rgb(var(--bg-primary));
+  }
+}
 
 /* 🌞 Light Mode (por defecto) */
 :root {

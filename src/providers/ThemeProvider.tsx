@@ -22,12 +22,29 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  // Initialize theme based on system preference or stored value
+  const initializeTheme = () => {
+    const storedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+    const initialTheme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+    setTheme(initialTheme as Theme);
+    document.documentElement.className = initialTheme;
+  };
+
+  // Toggle between light and dark themes
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.className = newTheme;
   };
+
+  // Initialize theme on component mount
+  React.useEffect(() => {
+    initializeTheme();
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
