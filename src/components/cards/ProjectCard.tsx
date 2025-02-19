@@ -78,7 +78,7 @@ export default function ProjectCard({
               whileHover={
                 prefersReducedMotion ? undefined : { opacity: 1, scale: 1.05 }
               }
-              className="rounded-full bg-black/[.05] px-3 py-1 text-sm dark:bg-white/[.06]"
+              className="rounded-full bg-glow-gradient px-3 py-1 text-sm"
             >
               {tech}
             </motion.span>

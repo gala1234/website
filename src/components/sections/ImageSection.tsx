@@ -35,14 +35,14 @@ export default function ImageSection() {
       <div className="relative z-10 flex min-h-screen items-center justify-start p-8 sm:p-20">
         <div className="max-w-[1400px]">
           <motion.div
-            className="text-primary max-w-3xl rounded-lg bg-white/80 dark:bg-black/[.8] p-8 shadow-lg"
+            className="text-primary max-w-3xl rounded-lg bg-glow-gradient p-8 shadow-lg"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <SectionHeader title={content.title} />
-            <SectionSubHeader title={content.subtitle} />
+            <SectionHeader title={content.title} color={'text-primary'} />
+            <SectionSubHeader title={content.subtitle} color={'text-primary'} />
           </motion.div>
         </div>
       </div>

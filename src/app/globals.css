@@ -3,35 +3,35 @@
 @layer base {
   :root {
     /* Primary Colors */
-    --primary-light-blue: 72 204 235;
-    --primary-purple: 185 66 219;
-    --primary-tan: 215 171 116;
-    --primary-lavender: 230 206 231;
-    --primary-blue: 84 85 195;
-    --primary-dark-purple: 62 51 127;
-    --primary-brown: 145 97 74;
-    --primary-slate: 83 107 131;
-    --primary-dark-brown: 98 60 55;
-    --primary-burgundy: 58 34 48;
+    --primary-light-blue: #48cceb;
+    --primary-purple: #b942db;
+    --primary-tan: #d7ab74;
+    --primary-lavender: #e6cee7;
+    --primary-blue: #5455c3;
+    --primary-dark-purple: #3e337f;
+    --primary-brown: #91614a;
+    --primary-slate: #536b83;
+    --primary-dark-brown: #623c37;
+    --primary-burgundy: #3a2230;
 
     /* Theme Variables */
     --text-primary: var(--primary-dark-brown);
     --text-secondary: var(--primary-slate);
     --text-accent: var(--primary-purple);
 
-    --bg-primary: 255 255 255;
+    --bg-primary: #ffffff;
     --bg-secondary: var(--primary-light-blue);
     --bg-accent: var(--primary-purple);
 
     --gradient-primary: linear-gradient(
       90deg,
-      rgb(var(--primary-light-blue)),
-      rgb(var(--primary-purple))
+      var(--primary-light-blue),
+      var(--primary-purple)
     );
     --gradient-secondary: linear-gradient(
       90deg,
-      rgb(var(--primary-tan)),
-      rgb(var(--primary-lavender))
+      var(--primary-tan),
+      var(--primary-lavender)
     );
   }
 
@@ -46,13 +46,13 @@
 
     --gradient-primary: linear-gradient(
       90deg,
-      rgb(var(--primary-dark-purple)),
-      rgb(var(--primary-purple))
+      var(--primary-dark-purple),
+      var(--primary-purple)
     );
     --gradient-secondary: linear-gradient(
       90deg,
-      rgb(var(--primary-burgundy)),
-      rgb(var(--primary-slate))
+      var(--primary-burgundy),
+      var(--primary-slate)
     );
   }
 }
@@ -147,18 +147,10 @@
   --gentle-gradient: linear-gradient(
     to bottom right,
     var(--primary-white),
-    rgb(249, 250, 251)
+    #f9fafb
   );
-  --glow-gradient: linear-gradient(
-    90deg,
-    rgb(239, 246, 255),
-    rgb(245, 243, 255)
-  );
-  --glow-gradient-hover: linear-gradient(
-    90deg,
-    rgb(219, 234, 254),
-    rgb(237, 233, 254)
-  );
+  --glow-gradient: linear-gradient(90deg, #eff6ffe8, #f5f3ffcf);
+  --glow-gradient-hover: linear-gradient(90deg, #dbebfee8, #ede9fee8);
 }
 
 /* 🌙 Dark Mode */
@@ -185,20 +177,16 @@
     var(--accent-hot-pink),
     var(--dark-primary)
   );
-  --gentle-gradient: linear-gradient(
-    to bottom right,
-    rgb(31, 41, 55, 0.5),
-    rgb(55, 65, 81, 0.5)
-  );
+  --gentle-gradient: linear-gradient(to bottom right, #1f29374d, #37415180);
   --glow-gradient: linear-gradient(
     90deg,
-    rgba(30, 58, 138, 0.2),
-    rgba(88, 28, 135, 0.2)
+    rgba(30, 58, 138, 0.4),
+    rgba(88, 28, 135, 0.4)
   );
   --glow-gradient-hover: linear-gradient(
     90deg,
-    rgba(30, 58, 138, 0.3),
-    rgba(88, 28, 135, 0.3)
+    rgba(30, 58, 138, 0.6),
+    rgba(88, 28, 135, 0.6)
   );
 }
 
